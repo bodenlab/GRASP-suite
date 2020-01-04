@@ -1,0 +1,32 @@
+baseURL = "bodenlab.github.io/GRASP-suite/"
+languageCode = "en-us"
+title = "GRASP-suite"
+theme = "academia"
+
+publishDir = "docs"
+
+[params]
+    name = "GRASP-suite"
+    description = "A mystery person"
+
+    showSubheader = true
+    showServices = true
+    showRecentWorks = true
+    showDownload = true
+    showClients = true
+
+    footerEnableContact = false
+    footerEnableFollowme = false
+    footerEnableTextWidget = false
+    footerEnableFormWidget = false
+
+
+[[menu.main]]
+    name = "home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "blog"
+    url = "/post/"
+    weight = 5
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on GRASP-suite</title>
+    <link>http://bodenlab.github.io/GRASP-suite/publication/</link>
+    <description>Recent content in Publications on GRASP-suite</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="http://bodenlab.github.io/GRASP-suite/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Identifying and engineering ancient variants of enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)</title>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/grasp/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/grasp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SeqScrub: a web tool for automatic cleaning and annotation of FASTA file headers for bioinformatic applications</title>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/seqscrub/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/seqscrub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering highly functional thermostable proteins using ancestral sequence reconstruction</title>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/engineering_highly_functional/</link>
+      <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/engineering_highly_functional/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

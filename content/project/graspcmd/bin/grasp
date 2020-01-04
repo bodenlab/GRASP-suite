@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar /Users/mikael/GRASP-suite/archive/bnkit.jar $@

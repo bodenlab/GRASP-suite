@@ -1,0 +1,7 @@
+[submodule "themes/hugo-initio"]
+	path = themes/hugo-initio
+	url = https://github.com/miguelsimoni/hugo-initio.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/bodenlab/grasp-suite.git
+	branch = master
