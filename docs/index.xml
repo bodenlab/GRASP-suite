@@ -6,19 +6,10 @@
     <description>Recent content on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="http://bodenlab.github.io/GRASP-suite/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Recent &amp; Upcoming Talks</title>
-      <link>http://bodenlab.github.io/GRASP-suite/talk/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      
-      <guid>http://bodenlab.github.io/GRASP-suite/talk/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Publications</title>
@@ -35,15 +26,6 @@
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Slides</title>
-      <link>http://bodenlab.github.io/GRASP-suite/slides/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://bodenlab.github.io/GRASP-suite/slides/</guid>
       <description></description>
     </item>
     
