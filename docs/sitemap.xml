@@ -109,7 +109,7 @@
   
   <url>
     <loc>http://bodenlab.github.io/GRASP-suite/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -184,7 +184,7 @@
   
   <url>
     <loc>http://bodenlab.github.io/GRASP-suite/tags/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -229,7 +229,7 @@
   
   <url>
     <loc>http://bodenlab.github.io/GRASP-suite/tags/ancestral-sequence-reconstruction/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -358,13 +358,23 @@
   </url>
   
   <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/post/snail/</loc>
+    <loc>http://bodenlab.github.io/GRASP-suite/post/analysis/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/post/</loc>
+    <loc>http://bodenlab.github.io/GRASP-suite/post/grasp/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/post/curation/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/post/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>

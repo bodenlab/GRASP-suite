@@ -19,14 +19,3 @@ publishDir = "docs"
     footerEnableFollowme = false
     footerEnableTextWidget = false
     footerEnableFormWidget = false
-
-
-[[menu.main]]
-    name = "home"
-    url = "/"
-    weight = 1
-[[menu.main]]
-    name = "blog"
-    url = "/post/"
-    weight = 5
-
