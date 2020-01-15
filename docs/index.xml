@@ -21,11 +21,29 @@
     </item>
     
     <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>http://bodenlab.github.io/GRASP-suite/talk/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Projects</title>
       <link>http://bodenlab.github.io/GRASP-suite/project/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>http://bodenlab.github.io/GRASP-suite/slides/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/slides/</guid>
       <description></description>
     </item>
     
