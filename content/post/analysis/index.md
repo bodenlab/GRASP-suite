@@ -22,6 +22,6 @@ image:
 
 ## Tutorial
 
-[Click here to access this notebooks through GRASP-resources](http://github.com/bodenlab/GRASP-resources)
+[Click here to access this notebook through GRASP-resources](http://github.com/bodenlab/GRASP-resources)
 
 This notebook can be cloned and used locally. See the [GRASP-resources repository](http://github.com/bodenlab/GRASP-resources) for full details

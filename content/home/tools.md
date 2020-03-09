@@ -33,9 +33,9 @@ subtitle = ""
     name = "Inference"
     tag = "Inference"
   
-  [[content.filter_button]]
-    name = "Post-inference analysis"
-    tag = "human"
+  #[[content.filter_button]]
+   # name = "Post-inference analysis"
+    #tag = "Post-inference"
   
 
 [design]
