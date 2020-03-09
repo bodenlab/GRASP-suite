@@ -17,43 +17,23 @@
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</guid>
-      <description>
-
-&lt;h2 id=&#34;grasp-command-line-interface&#34;&gt;GRASP command-line interface&lt;/h2&gt;
-
-&lt;p&gt;Users who would like to automate ASR, there is now a limited-feature, command-line version of GRASP. It is implemented in &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34; target=&#34;_blank&#34;&gt;bnkit&lt;/a&gt; (because that&amp;rsquo;s where all the essential code resides) as a class &lt;code&gt;reconstruction.GraspCmd&lt;/code&gt;.&lt;/p&gt;
-
+      <description>&lt;h2 id=&#34;grasp-command-line-interface&#34;&gt;GRASP command-line interface&lt;/h2&gt;
+&lt;p&gt;Users who would like to automate ASR, there is now a limited-feature, command-line version of GRASP. It is implemented in &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; (because that&#39;s where all the essential code resides) as a class &lt;code&gt;reconstruction.GraspCmd&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;graspcmd-what-can-it-do&#34;&gt;GraspCmd: What can it do?&lt;/h3&gt;
-
 &lt;p&gt;GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the &lt;em&gt;most supported&lt;/em&gt; path of sequence inclusions at each ancestor.&lt;/p&gt;
-
 &lt;p&gt;This command line version of the full-fledged web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with amino acid distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.&lt;/p&gt;
-
 &lt;h3 id=&#34;graspcmd-how-do-i-make-it-work-on-my-computer&#34;&gt;GraspCmd: How do I make it work on my computer?&lt;/h3&gt;
-
 &lt;p&gt;First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.&lt;/p&gt;
-
-&lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34; target=&#34;_blank&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, just download the pre-compiled &lt;a href=&#34;archive/bnkit.jar&#34; target=&#34;_blank&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
+&lt;p&gt;Alternatively, just download the pre-compiled &lt;a href=&#34;archive/bnkit.jar&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;graspcmd-how-do-i-run-it&#34;&gt;GraspCmd: How do I run it?&lt;/h3&gt;
-
-&lt;p&gt;Optionally, we suggest that you save the JAR file somewhere where everyone on your system can read it, e.g. &lt;code&gt;/Users/mikael/GRASP-suite/archive/bnkit.jar&lt;/code&gt;. Then, you create a script &lt;a href=&#34;bin/grasp&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;grasp&lt;/code&gt;&lt;/a&gt; to run it, which you save where other applications are kept on your system, e.g. &lt;code&gt;/Users/mikael/GRASP-suite/bin/&lt;/code&gt;.&lt;/p&gt;
-
+&lt;p&gt;Optionally, we suggest that you save the JAR file somewhere where everyone on your system can read it, e.g. &lt;code&gt;/Users/mikael/GRASP-suite/archive/bnkit.jar&lt;/code&gt;. Then, you create a script &lt;a href=&#34;bin/grasp&#34;&gt;&lt;code&gt;grasp&lt;/code&gt;&lt;/a&gt; to run it, which you save where other applications are kept on your system, e.g. &lt;code&gt;/Users/mikael/GRASP-suite/bin/&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Once you have the JAR file, type&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;  java -jar bnkit.jar -help
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or if you are running the JAR file through the script above&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;  grasp -help
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will print out the arguments that specifies your input data and options.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;Usage: GraspCmd 
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;  java -jar bnkit.jar -help
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or if you are running the JAR file through the script above&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;  grasp -help
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will print out the arguments that specifies your input data and options.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;Usage: GraspCmd 
 	[-aln &amp;lt;alignment-file&amp;gt; -nwk &amp;lt;tree-file&amp;gt; -out &amp;lt;output-file&amp;gt;]
 	{-model &amp;lt;JTT(default)|Dayhoff|LG|WAG&amp;gt;}
 	{-thr &amp;lt;n-threads&amp;gt;}
@@ -75,20 +55,13 @@ Notes:
 	Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
 	Evolutionary models include Jones-Taylor-Thornton (default), Dayhoff-Schwartz-Orcutt, Le-Gasquel and Whelan-Goldman.
 	~ This is version 1027.2019 ~
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A typical command may look like this&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A typical command may look like this&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
 &lt;p&gt;Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.&lt;/p&gt;
-
 &lt;p&gt;You can probably run a reconstruction with 10,000 sequences on a server, but how &amp;ldquo;gappy&amp;rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.&lt;/p&gt;
-
 &lt;p&gt;The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (-thr 5).&lt;/p&gt;
+&lt;p&gt;GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model (Yang Z, &lt;em&gt;J Mol Evol&lt;/em&gt; 1994). This has not been tested extensively.&lt;/p&gt;
 </description>
     </item>
     
@@ -98,27 +71,16 @@ Notes:
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/project/grasp/</guid>
-      <description>
-
-&lt;h2 id=&#34;grasp-web-service&#34;&gt;GRASP web service&lt;/h2&gt;
-
-&lt;p&gt;GRASP web service was developed to facilitate the steps of performing a reconstruction of ancestor sequences (represented by partial-order graphs) and the exploration, archival and sharing of the output. The service consists of three major parts: an inference engine &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34; target=&#34;_blank&#34;&gt;bnkit&lt;/a&gt; written in Java, a web service backend written in Java using the Spring framework and Postgres, and web client functionality written in Javascript. The latter two are contained in the open source project &lt;a href=&#34;https://github.com/bodenlab/GRASP&#34; target=&#34;_blank&#34;&gt;GRASP&lt;/a&gt;. GRASP depends on the open source project &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34; target=&#34;_blank&#34;&gt;bnkit&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;h2 id=&#34;grasp-web-service&#34;&gt;GRASP web service&lt;/h2&gt;
+&lt;p&gt;GRASP web service was developed to facilitate the steps of performing a reconstruction of ancestor sequences (represented by partial-order graphs) and the exploration, archival and sharing of the output. The service consists of three major parts: an inference engine &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; written in Java, a web service backend written in Java using the Spring framework and Postgres, and web client functionality written in Javascript. The latter two are contained in the open source project &lt;a href=&#34;https://github.com/bodenlab/GRASP&#34;&gt;GRASP&lt;/a&gt;. GRASP depends on the open source project &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;grasp-what-can-it-do&#34;&gt;GRASP: What can it do?&lt;/h3&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://grasp.scmb.uq.edu.au&#34; target=&#34;_blank&#34;&gt;GRASP web service&lt;/a&gt; has a User&amp;rsquo;s Guide that we recommend. You will find it in the menu at the top of the GRASP screen at all times.&lt;/p&gt;
-
+&lt;p&gt;The &lt;a href=&#34;http://grasp.scmb.uq.edu.au&#34;&gt;GRASP web service&lt;/a&gt; has a User&#39;s Guide that we recommend. You will find it in the menu at the top of the GRASP screen at all times.&lt;/p&gt;
 &lt;h3 id=&#34;grasp-how-do-i-make-it-work-on-my-computer&#34;&gt;GRASP: How do I make it work on my computer?&lt;/h3&gt;
-
-&lt;p&gt;Use any standard web browser and enter the URL &lt;a href=&#34;http://grasp.scmb.uq.edu.au&#34; target=&#34;_blank&#34;&gt;http://grasp.scmb.uq.edu.au&lt;/a&gt;. We recommend that you sign up for an account; with an account you will be able to use a lot of features that otherwise are unavailable.&lt;/p&gt;
-
+&lt;p&gt;Use any standard web browser and enter the URL &lt;a href=&#34;http://grasp.scmb.uq.edu.au&#34;&gt;http://grasp.scmb.uq.edu.au&lt;/a&gt;. We recommend that you sign up for an account; with an account you will be able to use a lot of features that otherwise are unavailable.&lt;/p&gt;
 &lt;h3 id=&#34;graspcmd-how-do-i-run-it&#34;&gt;GraspCmd: How do I run it?&lt;/h3&gt;
-
-&lt;p&gt;Follow the User&amp;rsquo;s Guide.&lt;/p&gt;
-
+&lt;p&gt;Follow the User&#39;s Guide.&lt;/p&gt;
 &lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
-
-&lt;p&gt;There is a [command-line version]() to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&#34;&#34;&gt;command-line version&lt;/a&gt; to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
 </description>
     </item>
     
