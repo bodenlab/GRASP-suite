@@ -48,6 +48,31 @@
   </url>
   
   <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/tags/inference/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/project/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bodenlab.github.io/GRASP-suite/tags/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://bodenlab.github.io/GRASP-suite/publication_types/3/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
@@ -108,17 +133,7 @@
   </url>
   
   <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bodenlab.github.io/GRASP-suite/publication/grasp/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/tags/inference/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -183,11 +198,6 @@
   </url>
   
   <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/tags/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bodenlab.github.io/GRASP-suite/authors/volker-sieber/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
@@ -210,16 +220,6 @@
   <url>
     <loc>http://bodenlab.github.io/GRASP-suite/talk/inpec_apem/</loc>
     <lastmod>2019-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</loc>
-    <lastmod>2019-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bodenlab.github.io/GRASP-suite/project/</loc>
-    <lastmod>2019-11-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>

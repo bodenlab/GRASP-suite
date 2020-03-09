@@ -3,7 +3,7 @@ title: GRASP-cmd
 summary: Command line version of GRASP.<br><br>[Download bnkit.JAR file](project/graspcmd/archive/bnkit.jar) 
 tags:
 - Inference
-date: "2019-11-27T00:00:00Z"
+date: "2020-03-09T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 
@@ -19,7 +19,9 @@ Users who would like to automate ASR, there is now a limited-feature, command-li
 
 GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the _most supported_ path of sequence inclusions at each ancestor.
 
-This command line version of the full-fledged web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with amino acid distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.
+This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.
+
+GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model "Yang" (based on "REV" in Yang Z, *J Mol Evol* 1994). At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).
 
 ### GraspCmd: How do I make it work on my computer?
 
@@ -81,5 +83,3 @@ Running the command-line version is typically a quicker affair, at least for sma
 You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.
 
 The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (-thr 5).
-
-GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model (Yang Z, *J Mol Evol* 1994). This has not been tested extensively.
