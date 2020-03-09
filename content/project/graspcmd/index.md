@@ -81,3 +81,5 @@ Running the command-line version is typically a quicker affair, at least for sma
 You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.
 
 The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (-thr 5).
+
+GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model (Yang Z, *J Mol Evol* 1994). This has not been tested extensively.
