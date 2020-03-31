@@ -1,4 +1,23 @@
-# Workflow ASR
+---
+title: 'Workflow ASR'
+subtitle:  'Preparing for using GRASP'
+summary: Steps to take to complete ASR
+tags:
+- Ancestral Sequence Reconstruction
+categories: []
+date: "2020-03-31"
+lastmod: "2020-03-31"
+featured: false
+draft: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+
+---
 
 ### Install key programs
 
