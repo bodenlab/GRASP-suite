@@ -484,22 +484,23 @@
 </ul>
 </li>
 <li>
-<p>CD-HIT (commandline tool); install is easy if Anaconda has been installed earlier</p>
+<p>CD-HIT (commandline tool; <a href="https://github.com/weizhongli/cdhit/wiki);">https://github.com/weizhongli/cdhit/wiki);</a> install is easy if Anaconda has been installed earlier</p>
 <p><code>conda install -c bioconda cd-hit</code></p>
 </li>
 <li>
-<p>Sequence alignment program, recommend Clustal Omega (commandline tool)</p>
+<p>Sequence alignment program, recommend Clustal Omega (commandline tool; <a href="http://www.clustal.org/omega/">http://www.clustal.org/omega/</a>) or MAFFT (commandline <a href="https://mafft.cbrc.jp/alignment/software/">https://mafft.cbrc.jp/alignment/software/</a>)</p>
 </li>
 <li>
-<p>Alignment viewer, recommend AliView</p>
+<p>Alignment viewer, recommend AliView (<a href="http://ormbunkar.se/aliview/">http://ormbunkar.se/aliview/</a>)</p>
 </li>
 <li>
-<p>Phylogenetic tree inference program, recommend FastTree (commandline tool)</p>
+<p>Phylogenetic tree inference program, recommend FastTree (commandline tool; <a href="http://www.microbesonline.org/fasttree/">http://www.microbesonline.org/fasttree/</a>)</p>
 </li>
 <li>
-<p>Phylogenetic tree viewer, recommend FigTree (well-designed) or Archaeopteryx (for large trees)</p>
+<p>Phylogenetic tree viewer, recommend FigTree (well-designed; <a href="http://tree.bio.ed.ac.uk/software/figtree/">http://tree.bio.ed.ac.uk/software/figtree/</a>) or Archaeopteryx (for large trees; <a href="https://sites.google.com/site/cmzmasek/home/software/archaeopteryx">https://sites.google.com/site/cmzmasek/home/software/archaeopteryx</a>)</p>
 </li>
 </ul>
+<p>Below, instructions assume a UNIX like environment; MacOS is one and so is Linux, but Windows is not. Cygwin is a suite of tools that installs under Windows to provide a lot of the same command-like functionality.</p>
 <h3 id="decide-on-a-namespacereference-database-eg-uniprot">Decide on a namespace/reference database, e.g. UniProt</h3>
 <ul>
 <li>Source for identifiers from, key annotations, etc. Every sequence will (ideally) have an identifier from this source.</li>
@@ -521,7 +522,7 @@
 <h3 id="download-all-members-of-protein-family">Download all members of protein family</h3>
 <ul>
 <li>In UniProt, decide on a family identifier, e.g. &ldquo;DapA&rdquo;, and remove questionable entries, e.g. sequence fragments</li>
-<li>Execute search and download as FASTA, e.g. go to <a href="https://www.uniprot.org">https://www.uniprot.org</a> type in query <code>family:&quot;dapa family&quot; fragment:no</code>, download as FASTA, save as <code>db-100.fa</code></li>
+<li>Execute search and download as FASTA, e.g. go to <a href="https://www.uniprot.org">https://www.uniprot.org</a> type in query <code>family:&quot;dapa family&quot; fragment:no</code>, download as FASTA, save as <code>db-100.fa</code> (&ldquo;100&rdquo; because it is 100% of the family.)</li>
 </ul>
 <h3 id="create-blast-database">Create BLAST database</h3>
 <ul>
@@ -545,7 +546,7 @@
 <li>
 <p>Use program such as CD-HIT to filter sequences at different levels of redundancy allowed, e.g. 99%, 95%, 90%, 50% (we call these db-99, db-95, etc)</p>
 <ul>
-<li>For example, <code>cd-hit -i Downloaded.fa -c 0.99 -T 5 -o db-99 -d 0</code> generates a file <code>db-99.clstr</code>; We do <em>not</em> use the FASTA file created by CD-HIT</li>
+<li>For example, <code>cd-hit -i db-100.fa -c 0.99 -T 5 -o db-99 -d 0</code> generates a file <code>db-99.clstr</code>; We do <em>not</em> use the FASTA file created by CD-HIT</li>
 <li>For each sequence similarity &ldquo;cluster&rdquo; identified (in <code>db-99.clstr</code>), keep <em>all</em> Tier-1 entries, when no Tier-1 entries are in the cluster, keep exactly <em>one</em> Tier-2 entry if available; only when no Tier-1 or Tier-2 entries are in the cluster, pick an entry randomly [this step needs to be automated]; from this, create <code>db-99.fa</code>, <code>db-95.fa</code>, etc</li>
 </ul>
 </li>

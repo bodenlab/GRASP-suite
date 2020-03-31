@@ -27,17 +27,19 @@ projects: []
 
   - Python scripts will help automate many tasks below
 
-- CD-HIT (commandline tool); install is easy if Anaconda has been installed earlier
+- CD-HIT (commandline tool; https://github.com/weizhongli/cdhit/wiki); install is easy if Anaconda has been installed earlier
 
   `conda install -c bioconda cd-hit`
 
-- Sequence alignment program, recommend Clustal Omega (commandline tool)
+- Sequence alignment program, recommend Clustal Omega (commandline tool; http://www.clustal.org/omega/) or MAFFT (commandline https://mafft.cbrc.jp/alignment/software/)
 
-- Alignment viewer, recommend AliView
+- Alignment viewer, recommend AliView (http://ormbunkar.se/aliview/)
 
-- Phylogenetic tree inference program, recommend FastTree (commandline tool)
+- Phylogenetic tree inference program, recommend FastTree (commandline tool; http://www.microbesonline.org/fasttree/)
 
-- Phylogenetic tree viewer, recommend FigTree (well-designed) or Archaeopteryx (for large trees)
+- Phylogenetic tree viewer, recommend FigTree (well-designed; http://tree.bio.ed.ac.uk/software/figtree/) or Archaeopteryx (for large trees; https://sites.google.com/site/cmzmasek/home/software/archaeopteryx)
+
+Below, instructions assume a UNIX like environment; MacOS is one and so is Linux, but Windows is not. Cygwin is a suite of tools that installs under Windows to provide a lot of the same command-like functionality.
 
 ### Decide on a namespace/reference database, e.g. UniProt
 
@@ -58,7 +60,7 @@ projects: []
 ### Download all members of protein family
 
 - In UniProt, decide on a family identifier, e.g. "DapA", and remove questionable entries, e.g. sequence fragments
-- Execute search and download as FASTA, e.g. go to https://www.uniprot.org type in query `family:"dapa family" fragment:no`, download as FASTA, save as `db-100.fa`
+- Execute search and download as FASTA, e.g. go to https://www.uniprot.org type in query `family:"dapa family" fragment:no`, download as FASTA, save as `db-100.fa` ("100" because it is 100% of the family.)
 
 ### Create BLAST database
 
@@ -74,7 +76,7 @@ projects: []
 ### Constrain representation of protein family using key proteins
 
 - Use program such as CD-HIT to filter sequences at different levels of redundancy allowed, e.g. 99%, 95%, 90%, 50% (we call these db-99, db-95, etc)
-  - For example, `cd-hit -i Downloaded.fa -c 0.99 -T 5 -o db-99 -d 0` generates a file `db-99.clstr`; We do *not* use the FASTA file created by CD-HIT
+  - For example, `cd-hit -i db-100.fa -c 0.99 -T 5 -o db-99 -d 0` generates a file `db-99.clstr`; We do *not* use the FASTA file created by CD-HIT
   - For each sequence similarity "cluster" identified (in `db-99.clstr`), keep *all* Tier-1 entries, when no Tier-1 entries are in the cluster, keep exactly *one* Tier-2 entry if available; only when no Tier-1 or Tier-2 entries are in the cluster, pick an entry randomly [this step needs to be automated]; from this, create `db-99.fa`, `db-95.fa`, etc
 
 - Make BLAST databases for each redundancy level, db-99, db-95, etc
