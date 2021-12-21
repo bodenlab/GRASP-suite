@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academia 4.3.1">
-  <meta name="generator" content="Hugo 0.62.0" />
+  <meta name="generator" content="Hugo 0.59.0" />
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="/GRASP-suite/css/academia.min.52d5fe3de2cce5eb27860e7880aedf5c.css">
+  <link rel="stylesheet" href="/GRASP-suite/css/academia.min.bc0bb88bdd81325546c60a72b4a6b9e5.css">
 
   
 
@@ -472,137 +472,154 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <h3 id="install-key-programs">Install key programs</h3>
+      
+
+<h3 id="install-key-programs">Install key programs</h3>
+
 <ul>
-<li>
-<p>BLAST+ executables (NCBI commandline tool; <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download">https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download</a>)</p>
-</li>
-<li>
-<p>Python distribution v3.x, recommend Anaconda (<a href="https://www.anaconda.com/distribution/">https://www.anaconda.com/distribution/</a>)</p>
+<li><p>BLAST+ executables (NCBI commandline tool; <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download" target="_blank">https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download</a>)</p></li>
+
+<li><p>Python distribution v3.x, recommend Anaconda (<a href="https://www.anaconda.com/distribution/" target="_blank">https://www.anaconda.com/distribution/</a>)</p>
+
 <ul>
 <li>Python scripts will help automate many tasks below</li>
+</ul></li>
+
+<li><p>CD-HIT (commandline tool; <a href="https://github.com/weizhongli/cdhit/wiki" target="_blank">https://github.com/weizhongli/cdhit/wiki</a>); install is easy if Anaconda has been installed earlier</p></li>
 </ul>
-</li>
-<li>
-<p>CD-HIT (commandline tool; <a href="https://github.com/weizhongli/cdhit/wiki);">https://github.com/weizhongli/cdhit/wiki);</a> install is easy if Anaconda has been installed earlier</p>
+
 <p><code>conda install -c bioconda cd-hit</code></p>
-</li>
-<li>
-<p>Sequence alignment program, recommend Clustal Omega (commandline tool; <a href="http://www.clustal.org/omega/">http://www.clustal.org/omega/</a>) or MAFFT (commandline <a href="https://mafft.cbrc.jp/alignment/software/">https://mafft.cbrc.jp/alignment/software/</a>)</p>
-</li>
-<li>
-<p>Alignment viewer, recommend AliView (<a href="http://ormbunkar.se/aliview/">http://ormbunkar.se/aliview/</a>)</p>
-</li>
-<li>
-<p>Phylogenetic tree inference program, recommend FastTree (commandline tool; <a href="http://www.microbesonline.org/fasttree/">http://www.microbesonline.org/fasttree/</a>)</p>
-</li>
-<li>
-<p>Phylogenetic tree viewer, recommend FigTree (well-designed; <a href="http://tree.bio.ed.ac.uk/software/figtree/">http://tree.bio.ed.ac.uk/software/figtree/</a>) or Archaeopteryx (for large trees; <a href="https://sites.google.com/site/cmzmasek/home/software/archaeopteryx">https://sites.google.com/site/cmzmasek/home/software/archaeopteryx</a>)</p>
-</li>
+
+<ul>
+<li><p>Sequence alignment program, recommend Clustal Omega (commandline tool; <a href="http://www.clustal.org/omega/" target="_blank">http://www.clustal.org/omega/</a>) or MAFFT (commandline <a href="https://mafft.cbrc.jp/alignment/software/" target="_blank">https://mafft.cbrc.jp/alignment/software/</a>)</p></li>
+
+<li><p>Alignment viewer, recommend AliView (<a href="http://ormbunkar.se/aliview/" target="_blank">http://ormbunkar.se/aliview/</a>)</p></li>
+
+<li><p>Phylogenetic tree inference program, recommend FastTree (commandline tool; <a href="http://www.microbesonline.org/fasttree/" target="_blank">http://www.microbesonline.org/fasttree/</a>)</p></li>
+
+<li><p>Phylogenetic tree viewer, recommend FigTree (well-designed; <a href="http://tree.bio.ed.ac.uk/software/figtree/" target="_blank">http://tree.bio.ed.ac.uk/software/figtree/</a>) or Archaeopteryx (for large trees; <a href="https://sites.google.com/site/cmzmasek/home/software/archaeopteryx" target="_blank">https://sites.google.com/site/cmzmasek/home/software/archaeopteryx</a>)</p></li>
 </ul>
+
 <p>Below, instructions assume a UNIX like environment; MacOS is one and so is Linux, but Windows is not. Cygwin is a suite of tools that installs under Windows to provide a lot of the same command-like functionality.</p>
-<h3 id="decide-on-a-namespacereference-database-eg-uniprot">Decide on a namespace/reference database, e.g. UniProt</h3>
+
+<h3 id="decide-on-a-namespace-reference-database-e-g-uniprot">Decide on a namespace/reference database, e.g. UniProt</h3>
+
 <ul>
 <li>Source for identifiers from, key annotations, etc. Every sequence will (ideally) have an identifier from this source.</li>
 </ul>
+
 <h3 id="collect-key-proteins-two-tiers">Collect key proteins: two tiers</h3>
+
 <ul>
-<li>
-<p>Tier 1: &ldquo;Guide&rdquo; entries, proteins that are required in the final data set</p>
-<p>Collect as FASTA or name list, e.g. <code>collect_tier1.fa</code>; if identifiers or sequence are not known we will find them using a BLAST search from our reference database below.</p>
-</li>
-<li>
-<p>Tier-2: POI entries (proteins of interest), prioritise inclusion, but if redundant, choose one</p>
-<p>Collect as FASTA or name list, e.g. <code>collect_tier2.fa</code>; like above, identifiers/sequences will be retrieved using a BLAST search</p>
-</li>
-<li>
-<p>Devise a strategy with which a root can be placed in the eventual phylogenetic tree and amend Tier-1 and Tier-2 lists; this might involve having examplars in Tier-1 and Tier-2 that can work as outgroups or anchor points (by reference to published phylogenetic tree of the same family)</p>
-</li>
+<li>Tier 1: &ldquo;Guide&rdquo; entries, proteins that are required in the final data set</li>
 </ul>
+
+<p>Collect as FASTA or name list, e.g. <code>collect_tier1.fa</code>; if identifiers or sequence are not known we will find them using a BLAST search from our reference database below.</p>
+
+<ul>
+<li>Tier-2: POI entries (proteins of interest), prioritise inclusion, but if redundant, choose one</li>
+</ul>
+
+<p>Collect as FASTA or name list, e.g. <code>collect_tier2.fa</code>; like above, identifiers/sequences will be retrieved using a BLAST search</p>
+
+<ul>
+<li>Devise a strategy with which a root can be placed in the eventual phylogenetic tree and amend Tier-1 and Tier-2 lists; this might involve having examplars in Tier-1 and Tier-2 that can work as outgroups or anchor points (by reference to published phylogenetic tree of the same family)</li>
+</ul>
+
 <h3 id="download-all-members-of-protein-family">Download all members of protein family</h3>
+
 <ul>
 <li>In UniProt, decide on a family identifier, e.g. &ldquo;DapA&rdquo;, and remove questionable entries, e.g. sequence fragments</li>
-<li>Execute search and download as FASTA, e.g. go to <a href="https://www.uniprot.org">https://www.uniprot.org</a> type in query <code>family:&quot;dapa family&quot; fragment:no</code>, download as FASTA, save as <code>db-100.fa</code> (&ldquo;100&rdquo; because it is 100% of the family.)</li>
+<li>Execute search and download as FASTA, e.g. go to <a href="https://www.uniprot.org" target="_blank">https://www.uniprot.org</a> type in query <code>family:&quot;dapa family&quot; fragment:no</code>, download as FASTA, save as <code>db-100.fa</code> (&ldquo;100&rdquo; because it is 100% of the family.)</li>
 </ul>
+
 <h3 id="create-blast-database">Create BLAST database</h3>
+
 <ul>
 <li>makeblastdb (program part of BLASTx suite) on db-100
+
 <ul>
 <li>For example, <code>makeblastdb -dbtype prot -in db-100.fa -out db-100</code></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="create-tier-1-and-tier-2-files">Create Tier-1 and Tier-2 files</h3>
+
 <ul>
 <li>Use the BLAST database db-100 to re-generate Tier-1 and Tier-2 files, so they are associated with identifiers and sequences from reference database
+
 <ul>
 <li>For example, <code>blastp -db db-100 -outfmt 3 -num_descriptions 1 -num_alignments 0 -num_threads 5 -query collect_tier1.fa -out tier-1.txt -evalue 1e-100</code>; this will find the sequence with the highest similarity to that given, provided it is statistically supported at E=1e-100</li>
 <li>Extract sequence identifiers from BLAST report, e.g. <code>grep -e &quot;^[st][pr]&quot; tier-1.txt | cut -d' ' -f1 &gt; tier-1.tab</code>; from this create <code>tier-1.fa</code></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="constrain-representation-of-protein-family-using-key-proteins">Constrain representation of protein family using key proteins</h3>
+
 <ul>
-<li>
-<p>Use program such as CD-HIT to filter sequences at different levels of redundancy allowed, e.g. 99%, 95%, 90%, 50% (we call these db-99, db-95, etc)</p>
+<li><p>Use program such as CD-HIT to filter sequences at different levels of redundancy allowed, e.g. 99%, 95%, 90%, 50% (we call these db-99, db-95, etc)</p>
+
 <ul>
 <li>For example, <code>cd-hit -i db-100.fa -c 0.99 -T 5 -o db-99 -d 0</code> generates a file <code>db-99.clstr</code>; We do <em>not</em> use the FASTA file created by CD-HIT</li>
 <li>For each sequence similarity &ldquo;cluster&rdquo; identified (in <code>db-99.clstr</code>), keep <em>all</em> Tier-1 entries, when no Tier-1 entries are in the cluster, keep exactly <em>one</em> Tier-2 entry if available; only when no Tier-1 or Tier-2 entries are in the cluster, pick an entry randomly [this step needs to be automated]; from this, create <code>db-99.fa</code>, <code>db-95.fa</code>, etc</li>
-</ul>
-</li>
-<li>
-<p>Make BLAST databases for each redundancy level, db-99, db-95, etc</p>
+</ul></li>
+
+<li><p>Make BLAST databases for each redundancy level, db-99, db-95, etc</p>
+
 <ul>
 <li><code>makeblastdb -dbtype prot -in db-99.fa -out db-99</code></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="create-datasets">Create datasets</h3>
+
 <ul>
 <li>Search Tier-1 entries in db-100 including all homologs closer than a given E-value (e.g. 1e-100)
+
 <ul>
 <li>For example, <code>blastp -db db-100 -outfmt 3 -num_descriptions 20000 -num_alignments 0 -num_threads 5 -query tier-1.fa -out dataset-99.txt -evalue 1e-100</code></li>
 <li>Extract sequence identifiers from BLAST report, e.g. <code>grep -e &quot;^[st][pr]&quot; dataset-1.txt | cut -d' ' -f1 &gt; dataset-1.tab</code>; from this create <code>dataset-1.fa</code></li>
 <li>Mark Tier-1 and Tier-2 entries in dataset, with distinctive labels etc so that they can be searched for later</li>
-</ul>
-</li>
+</ul></li>
 <li>Try different combinations of redundancy levels (db-99, db-95, &hellip;) and E-value thresholds (1e-100, 1e-75, 1e-50, 1e-10, etc) to construct alternative datasets
+
 <ul>
 <li>Redundancy level will control how dense the overall sequence composition will be</li>
 <li>E-value threshold will control how closely we sample around the Tier-1 entries</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="perform-sequence-alignment">Perform sequence alignment</h3>
+
 <ul>
-<li>
-<p>Use multiple sequence alignment program to establish homologous positions between all entries in a dataset</p>
+<li>Use multiple sequence alignment program to establish homologous positions between all entries in a dataset
+
 <ul>
 <li>For example, <code>clustalo -i dataset-1.fa -o dataset-1.aln --output-order=tree-order --threads=5 --force</code></li>
-</ul>
-</li>
-<li>
-<p>Inspect alignment to evaluate quality</p>
+</ul></li>
+
+<li><p>Inspect alignment to evaluate quality</p>
+
 <ul>
 <li>For example, use AliView, zoom out so the whole alignment can be viewed</li>
+</ul></li>
+
+<li><p>Check for sole-sequence insertions (and deletions), and remove if incorrectly aligned, and disruptive of the the overall alignment; re-run alignment once cleaned</p></li>
 </ul>
-</li>
-<li>
-<p>Check for sole-sequence insertions (and deletions), and remove if incorrectly aligned, and disruptive of the the overall alignment; re-run alignment once cleaned</p>
-</li>
-</ul>
+
 <h3 id="perform-phylogenetic-tree-inference">Perform phylogenetic tree inference</h3>
+
 <ul>
 <li>Use tree inference program to create an unrooted phylogenetic tree
+
 <ul>
 <li>For example, <code>FastTree -nosupport -out dataset-1_unrooted.nwk dataset-1.fa</code></li>
-</ul>
-</li>
+</ul></li>
 <li>Inspect tree to place a root and to evaluate quality
+
 <ul>
 <li>For example, use FigTree or Archaeopteryx</li>
-</ul>
-</li>
+</ul></li>
 <li>Search for markers of Tier-1 and Tier-2 entries to find appropriate place for root, placed at branch point in unrooted tree</li>
 </ul>
 
