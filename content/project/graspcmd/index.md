@@ -13,7 +13,13 @@ image:
 
 ## GRASP command-line interface
 
-Users who would like to automate ASR, there is now a limited-feature, command-line version of GRASP. It is implemented in [bnkit](https://github.com/bodenlab/bnkit) (because that's where all the essential code resides) as a class `reconstruction.GraspCmd`.
+Users who would like to automate ASR, there is now a command-line version of GRASP that contains all of the indel inference methods. Indels are encoded using either Position Specific (PS), Simple Indel Coding (SIC), or Bi-directional Edge (BE) methods, and inferred using either Parsimony (P) or Maximum Likelihood (ML).
+
+This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
+
+It is implemented in [bnkit](https://github.com/bodenlab/bnkit) on the branch 'POG2020' as a class `asr.GRASP`.
+
+there is also alimited-feature, legacy command-line version of GRASP. It is implemented in [bnkit](https://github.com/bodenlab/bnkit) on the `master` branch as a class `reconstruction.GraspCmd`.
 
 ### GraspCmd: What can it do?
 
@@ -27,7 +33,10 @@ First, you will need Java version 8 or newer. Any operating system with Java sho
 
 Then, you have a choice: you can clone/download [bnkit](https://github.com/bodenlab/bnkit) in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.
 
-Alternatively, just download the pre-compiled [bnkit JAR file](archive/bnkit.jar). 
+Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). 
+
+Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
+
 
 ### GraspCmd: How do I run it? 
 
