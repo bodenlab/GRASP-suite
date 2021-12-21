@@ -3,5 +3,5 @@
 	url = https://github.com/miguelsimoni/hugo-initio.git
 [submodule "docs"]
 	path = docs
-	url = https://github.com/bodenlab/grasp-suite.git
+	url = https://github.com/bodenlab/bodenlab.github.io.git
 	branch = master
