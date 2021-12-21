@@ -6,10 +6,28 @@
     <description>Recent content on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="http://bodenlab.github.io/GRASP-suite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tools</title>
+      <link>http://bodenlab.github.io/GRASP-suite/post/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://bodenlab.github.io/GRASP-suite/project/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/project/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Publications</title>
@@ -30,38 +48,11 @@
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>http://bodenlab.github.io/GRASP-suite/project/</link>
-      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://bodenlab.github.io/GRASP-suite/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tools</title>
       <link>http://bodenlab.github.io/GRASP-suite/tools/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>http://bodenlab.github.io/GRASP-suite/post/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://bodenlab.github.io/GRASP-suite/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link></link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid></guid>
       <description></description>
     </item>
     

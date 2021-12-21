@@ -6,10 +6,152 @@
     <description>Recent content in Tools on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="http://bodenlab.github.io/GRASP-suite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Workflow ASR</title>
+      <link>http://bodenlab.github.io/GRASP-suite/post/protocols/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/post/protocols/</guid>
+      <description>&lt;h3 id=&#34;install-key-programs&#34;&gt;Install key programs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BLAST+ executables (NCBI commandline tool; &lt;a href=&#34;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;amp;PAGE_TYPE=BlastDocs&amp;amp;DOC_TYPE=Download&#34;&gt;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;amp;PAGE_TYPE=BlastDocs&amp;amp;DOC_TYPE=Download&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python distribution v3.x, recommend Anaconda (&lt;a href=&#34;https://www.anaconda.com/distribution/&#34;&gt;https://www.anaconda.com/distribution/&lt;/a&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python scripts will help automate many tasks below&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CD-HIT (commandline tool; &lt;a href=&#34;https://github.com/weizhongli/cdhit/wiki);&#34;&gt;https://github.com/weizhongli/cdhit/wiki);&lt;/a&gt; install is easy if Anaconda has been installed earlier&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;conda install -c bioconda cd-hit&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sequence alignment program, recommend Clustal Omega (commandline tool; &lt;a href=&#34;http://www.clustal.org/omega/&#34;&gt;http://www.clustal.org/omega/&lt;/a&gt;) or MAFFT (commandline &lt;a href=&#34;https://mafft.cbrc.jp/alignment/software/&#34;&gt;https://mafft.cbrc.jp/alignment/software/&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Alignment viewer, recommend AliView (&lt;a href=&#34;http://ormbunkar.se/aliview/&#34;&gt;http://ormbunkar.se/aliview/&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Phylogenetic tree inference program, recommend FastTree (commandline tool; &lt;a href=&#34;http://www.microbesonline.org/fasttree/&#34;&gt;http://www.microbesonline.org/fasttree/&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Phylogenetic tree viewer, recommend FigTree (well-designed; &lt;a href=&#34;http://tree.bio.ed.ac.uk/software/figtree/&#34;&gt;http://tree.bio.ed.ac.uk/software/figtree/&lt;/a&gt;) or Archaeopteryx (for large trees; &lt;a href=&#34;https://sites.google.com/site/cmzmasek/home/software/archaeopteryx&#34;&gt;https://sites.google.com/site/cmzmasek/home/software/archaeopteryx&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below, instructions assume a UNIX like environment; MacOS is one and so is Linux, but Windows is not. Cygwin is a suite of tools that installs under Windows to provide a lot of the same command-like functionality.&lt;/p&gt;
+&lt;h3 id=&#34;decide-on-a-namespacereference-database-eg-uniprot&#34;&gt;Decide on a namespace/reference database, e.g. UniProt&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Source for identifiers from, key annotations, etc. Every sequence will (ideally) have an identifier from this source.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;collect-key-proteins-two-tiers&#34;&gt;Collect key proteins: two tiers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Tier 1: &amp;ldquo;Guide&amp;rdquo; entries, proteins that are required in the final data set&lt;/p&gt;
+&lt;p&gt;Collect as FASTA or name list, e.g. &lt;code&gt;collect_tier1.fa&lt;/code&gt;; if identifiers or sequence are not known we will find them using a BLAST search from our reference database below.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tier-2: POI entries (proteins of interest), prioritise inclusion, but if redundant, choose one&lt;/p&gt;
+&lt;p&gt;Collect as FASTA or name list, e.g. &lt;code&gt;collect_tier2.fa&lt;/code&gt;; like above, identifiers/sequences will be retrieved using a BLAST search&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Devise a strategy with which a root can be placed in the eventual phylogenetic tree and amend Tier-1 and Tier-2 lists; this might involve having examplars in Tier-1 and Tier-2 that can work as outgroups or anchor points (by reference to published phylogenetic tree of the same family)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;download-all-members-of-protein-family&#34;&gt;Download all members of protein family&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In UniProt, decide on a family identifier, e.g. &amp;ldquo;DapA&amp;rdquo;, and remove questionable entries, e.g. sequence fragments&lt;/li&gt;
+&lt;li&gt;Execute search and download as FASTA, e.g. go to &lt;a href=&#34;https://www.uniprot.org&#34;&gt;https://www.uniprot.org&lt;/a&gt; type in query &lt;code&gt;family:&amp;quot;dapa family&amp;quot; fragment:no&lt;/code&gt;, download as FASTA, save as &lt;code&gt;db-100.fa&lt;/code&gt; (&amp;ldquo;100&amp;rdquo; because it is 100% of the family.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;create-blast-database&#34;&gt;Create BLAST database&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;makeblastdb (program part of BLASTx suite) on db-100
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;makeblastdb -dbtype prot -in db-100.fa -out db-100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;create-tier-1-and-tier-2-files&#34;&gt;Create Tier-1 and Tier-2 files&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the BLAST database db-100 to re-generate Tier-1 and Tier-2 files, so they are associated with identifiers and sequences from reference database
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;blastp -db db-100 -outfmt 3 -num_descriptions 1 -num_alignments 0 -num_threads 5 -query collect_tier1.fa -out tier-1.txt -evalue 1e-100&lt;/code&gt;; this will find the sequence with the highest similarity to that given, provided it is statistically supported at E=1e-100&lt;/li&gt;
+&lt;li&gt;Extract sequence identifiers from BLAST report, e.g. &lt;code&gt;grep -e &amp;quot;^[st][pr]&amp;quot; tier-1.txt | cut -d&#39; &#39; -f1 &amp;gt; tier-1.tab&lt;/code&gt;; from this create &lt;code&gt;tier-1.fa&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;constrain-representation-of-protein-family-using-key-proteins&#34;&gt;Constrain representation of protein family using key proteins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use program such as CD-HIT to filter sequences at different levels of redundancy allowed, e.g. 99%, 95%, 90%, 50% (we call these db-99, db-95, etc)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;cd-hit -i db-100.fa -c 0.99 -T 5 -o db-99 -d 0&lt;/code&gt; generates a file &lt;code&gt;db-99.clstr&lt;/code&gt;; We do &lt;em&gt;not&lt;/em&gt; use the FASTA file created by CD-HIT&lt;/li&gt;
+&lt;li&gt;For each sequence similarity &amp;ldquo;cluster&amp;rdquo; identified (in &lt;code&gt;db-99.clstr&lt;/code&gt;), keep &lt;em&gt;all&lt;/em&gt; Tier-1 entries, when no Tier-1 entries are in the cluster, keep exactly &lt;em&gt;one&lt;/em&gt; Tier-2 entry if available; only when no Tier-1 or Tier-2 entries are in the cluster, pick an entry randomly [this step needs to be automated]; from this, create &lt;code&gt;db-99.fa&lt;/code&gt;, &lt;code&gt;db-95.fa&lt;/code&gt;, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make BLAST databases for each redundancy level, db-99, db-95, etc&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;makeblastdb -dbtype prot -in db-99.fa -out db-99&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;create-datasets&#34;&gt;Create datasets&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search Tier-1 entries in db-100 including all homologs closer than a given E-value (e.g. 1e-100)
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;blastp -db db-100 -outfmt 3 -num_descriptions 20000 -num_alignments 0 -num_threads 5 -query tier-1.fa -out dataset-99.txt -evalue 1e-100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract sequence identifiers from BLAST report, e.g. &lt;code&gt;grep -e &amp;quot;^[st][pr]&amp;quot; dataset-1.txt | cut -d&#39; &#39; -f1 &amp;gt; dataset-1.tab&lt;/code&gt;; from this create &lt;code&gt;dataset-1.fa&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Mark Tier-1 and Tier-2 entries in dataset, with distinctive labels etc so that they can be searched for later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Try different combinations of redundancy levels (db-99, db-95, &amp;hellip;) and E-value thresholds (1e-100, 1e-75, 1e-50, 1e-10, etc) to construct alternative datasets
+&lt;ul&gt;
+&lt;li&gt;Redundancy level will control how dense the overall sequence composition will be&lt;/li&gt;
+&lt;li&gt;E-value threshold will control how closely we sample around the Tier-1 entries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;perform-sequence-alignment&#34;&gt;Perform sequence alignment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use multiple sequence alignment program to establish homologous positions between all entries in a dataset&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;clustalo -i dataset-1.fa -o dataset-1.aln --output-order=tree-order --threads=5 --force&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inspect alignment to evaluate quality&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For example, use AliView, zoom out so the whole alignment can be viewed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check for sole-sequence insertions (and deletions), and remove if incorrectly aligned, and disruptive of the the overall alignment; re-run alignment once cleaned&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;perform-phylogenetic-tree-inference&#34;&gt;Perform phylogenetic tree inference&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use tree inference program to create an unrooted phylogenetic tree
+&lt;ul&gt;
+&lt;li&gt;For example, &lt;code&gt;FastTree -nosupport -out dataset-1_unrooted.nwk dataset-1.fa&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inspect tree to place a root and to evaluate quality
+&lt;ul&gt;
+&lt;li&gt;For example, use FigTree or Archaeopteryx&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Search for markers of Tier-1 and Tier-2 entries to find appropriate place for root, placed at branch point in unrooted tree&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Fractional distance analysis</title>
@@ -17,13 +159,9 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/post/analysis/</guid>
-      <description>
-
-&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34; target=&#34;_blank&#34;&gt;Click here to access this notebook through GRASP-resources&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This notebook can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34; target=&#34;_blank&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
+      <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;Click here to access this notebook through GRASP-resources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This notebook can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
 </description>
     </item>
     
@@ -33,11 +171,8 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/post/grasp/</guid>
-      <description>
-
-&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/tutorial&#34; target=&#34;_blank&#34;&gt;Click here to access the general GRASP tutorial&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/tutorial&#34;&gt;Click here to access the general GRASP tutorial&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -47,11 +182,8 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/post/userguide/</guid>
-      <description>
-
-&lt;h2 id=&#34;grasp-user-guide&#34;&gt;GRASP user guide&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/guide&#34; target=&#34;_blank&#34;&gt;Click here to access the GRASP user guide&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;h2 id=&#34;grasp-user-guide&#34;&gt;GRASP user guide&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/guide&#34;&gt;Click here to access the GRASP user guide&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -61,13 +193,9 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/post/curation/</guid>
-      <description>
-
-&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34; target=&#34;_blank&#34;&gt;Click here to access these notebooks through GRASP-resources&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;These notebooks can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34; target=&#34;_blank&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
+      <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;Click here to access these notebooks through GRASP-resources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These notebooks can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
 </description>
     </item>
     
