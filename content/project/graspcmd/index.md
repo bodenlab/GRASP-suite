@@ -1,6 +1,6 @@
 ---
 title: GRASP-cmd
-summary: Command line version of GRASP.<br><br>[Download bnkit.JAR file](project/graspcmd/archive/bnkit.jar) <br><br> [Download legacy bnkit.JAR file](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP.<br><br>[Download bnkit.JAR file](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR file](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
@@ -35,7 +35,7 @@ First, you will need Java version 8 or newer. Any operating system with Java sho
 
 Then, you have a choice: you can clone/download [bnkit](https://github.com/bodenlab/bnkit) in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.
 
-Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). 
+Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit_20211215.jar). 
 
 Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
 
