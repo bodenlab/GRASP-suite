@@ -43,7 +43,7 @@
 
 &lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34; target=&#34;_blank&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
 
-&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;archive/bnkit.jar&#34; target=&#34;_blank&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;archive/bnkit_20211215.jar&#34; target=&#34;_blank&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Or, the legacy version &lt;a href=&#34;archive/bnkit_legacy.jar&#34; target=&#34;_blank&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
 
