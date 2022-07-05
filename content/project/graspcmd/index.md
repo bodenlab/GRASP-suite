@@ -45,31 +45,30 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
 1. Download the jar file
 
 2. Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar
-```#!/bin/sh
+
+`
+#!/bin/sh
+`
+
+`
 java -jar </path/to/filename.jar> $@
-```
+`
 
 3. Change permissions on the bash script
-`chmod 755 grasp`
+```console
+chmod 755 grasp
+```
 
 4. Place grasp where you store your executable files, for example - /usr/local/bin
-`mv grasp /usr/local/bin`
+```console
+mv grasp /usr/local/bin`
+```
 
 5. Check it works
 ```console
 grasp -h
 ```
 
-Optionally, we suggest that you save the JAR file somewhere where everyone on your system can read it, e.g. `/Users/mikael/GRASP-suite/archive/bnkit.jar`. Then, you create a script [`grasp`](bin/grasp) to run it, which you save where other applications are kept on your system, e.g. `/Users/mikael/GRASP-suite/bin/`.
-
-Once you have the JAR file, type
-```console
-  java -jar bnkit.jar -help
-```
-or if you are running the JAR file through the script above
-```console
-  grasp -help
-```
 
 This will print out the arguments that specifies your input data and options.
 
