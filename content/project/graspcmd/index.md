@@ -42,6 +42,24 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
 
 ### GraspCmd: How do I run it? 
 
+1. Download the jar file
+
+2. Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar
+```#!/bin/sh
+java -jar </path/to/filename.jar> $@
+```
+
+3. Change permissions on the bash script
+`chmod 755 grasp`
+
+4. Place grasp where you store your executable files, for example - /usr/local/bin
+`mv grasp /usr/local/bin`
+
+5. Check it works
+```console
+grasp -h
+```
+
 Optionally, we suggest that you save the JAR file somewhere where everyone on your system can read it, e.g. `/Users/mikael/GRASP-suite/archive/bnkit.jar`. Then, you create a script [`grasp`](bin/grasp) to run it, which you save where other applications are kept on your system, e.g. `/Users/mikael/GRASP-suite/bin/`.
 
 Once you have the JAR file, type
@@ -54,31 +72,6 @@ or if you are running the JAR file through the script above
 ```
 
 This will print out the arguments that specifies your input data and options.
-
-```console
-Usage: GraspCmd 
-	[-aln <alignment-file> -nwk <tree-file> -out <output-file>]
-	{-model <JTT(default)|Dayhoff|LG|WAG>}
-	{-thr <n-threads>}
-	{-joint (default) | -marg <branchpoint-id>} 
-	{-gap}
-	{-savetree <tree-file>}
-	{-format <FASTA(default)|CLUSTAL|DISTRIB>}
-	{-verbose}{-help}
-where 
-	alignment-file is a multiple-sequence alignment on FASTA or CLUSTAL format
-	tree-file is a phylogenetic tree on Newick format
-	output-file will be populated by inferred ancestor or ancestors
-	Inference is either joint (default) or marginal (marginal requires a branch-point to be nominated)
-	"-gap" means that the gap-character is included in the resulting output (default for CLUSTAL format)
-	"-savetree" re-saves the tree on Newick with ancestor names
-	The output file is written on the specified format.
-	-verbose will print out information about steps undertaken, and the time it took to finish.
-Notes: 
-	Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
-	Evolutionary models include Jones-Taylor-Thornton (default), Dayhoff-Schwartz-Orcutt, Le-Gasquel and Whelan-Goldman.
-	~ This is version 1027.2019 ~
-```
 
 A typical command may look like this
 ```
