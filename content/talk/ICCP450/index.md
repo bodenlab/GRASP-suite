@@ -3,7 +3,7 @@ title: Engineering cytochromes P450 from ancestral predictons using the novel to
 event: International Conference on Cytochrome P450
 event_url: https://www.iccp450brisbane.com/
 location: Brisbane, Australia
-summary: Talk at the [International Conference on Cytochrome P450](https://www.iccp450brisbane.com/)<br><br>[Click to download presentation slides.](talk/iccp450/Engineering_P450s_slides.pdf)
+summary: Talk at the [International Conference on Cytochrome P450](https://www.iccp450brisbane.com/) |[Click to download presentation slides.](talk/iccp450/Engineering_P450s_slides.pdf)
 abstract: "A talk that specifically looked at how acces to large data informed our experimental approaches in resurrecting cytochromes P450. <br> <br> [Click to download presentation slides.](Engineering_P450s_slides.pdf)"
 
 # Talk start and end times.

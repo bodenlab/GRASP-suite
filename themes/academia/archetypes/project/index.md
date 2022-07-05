@@ -6,7 +6,6 @@ summary: ""
 authors: []
 tags: []
 categories: []
-date: {{ .Date }}
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""

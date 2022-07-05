@@ -10,8 +10,6 @@ abstract:
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: {{ .Date }}
-date_end: {{ .Date }}
 all_day: false
 
 # Schedule page publish date (NOT talk date).

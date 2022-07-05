@@ -1,6 +1,6 @@
 ---
 title: GRASP-cmd
-summary: Command line version of GRASP.<br><br>[Download bnkit.JAR file](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR file](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP. |[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) | [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
@@ -28,6 +28,27 @@ GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (
 This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.
 
 GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model "Yang" (based on "REV" in Yang Z, *J Mol Evol* 1994). At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).
+
+
+### Access through Docker
+
+GRASP is available through Docker Hub at `gabefoley/grasp`
+
+Once you have docker installed you can
+
+
+```console
+docker run -it -v {full path to where your data is located}:/data gabefoley/grasp grasp -aln /data/{name of your alignment file}.aln -nwk /data/{name of your newick file}.nwk -out /data
+```
+
+for example, for me the command looks like (I have test_6.aln and test_6.nwk sitting in a /data folder):
+
+```console
+docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-docker grasp -aln /data/test_6.aln -nwk /data/test_6.nwk -out /data
+```
+
+This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.
+
 
 ### GraspCmd: How do I make it work on my computer?
 

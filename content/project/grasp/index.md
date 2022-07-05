@@ -1,6 +1,6 @@
 ---
 title: GRASP
-summary: GRASP performs ancestral sequence reconstruction.<br><br>[Use GRASP now](http://grasp.scmb.uq.edu.au)<br><br>[Link to repository](http://github.com/bodenlab/grasp)
+summary: GRASP performs ancestral sequence reconstruction | [Use GRASP now](http://grasp.scmb.uq.edu.au) | [Link to repository](http://github.com/bodenlab/grasp)
 
 
 tags:
@@ -11,7 +11,7 @@ date: "2016-04-27T00:00:00Z"
 external_link: http://grasp.scmb.uq.edu.au
 
 image:
-  caption: Photo by Toa Heftiba on Unsplash
+  caption:
   focal_point: Smart
 ---
 ## GRASP web service
