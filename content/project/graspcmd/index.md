@@ -1,6 +1,6 @@
 ---
 title: GRASP-cmd
-summary: Command line version of GRASP. <br><br> [Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP.<br><br>[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
@@ -19,7 +19,6 @@ This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
 
 It is implemented in [bnkit](https://github.com/bodenlab/bnkit) on the branch 'POG2020' as a class `asr.GRASP`.
 
-there is also alimited-feature, legacy command-line version of GRASP. It is implemented in [bnkit](https://github.com/bodenlab/bnkit) on the `master` branch as a class `reconstruction.GraspCmd`.
 
 ### GraspCmd: What can it do?
 
@@ -56,7 +55,7 @@ First, you will need Java version 8 or newer. Any operating system with Java sho
 
 Then, you have a choice: you can clone/download [bnkit](https://github.com/bodenlab/bnkit) in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.
 
-Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit_20211215.jar). 
+Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). 
 
 Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
 
