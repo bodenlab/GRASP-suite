@@ -97,6 +97,90 @@ A typical command may look like this
 grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
 ```
 
+Full help information -
+
+```
+Usage: asr.GRASP
+  [-a | --aln <filename>]
+  [-n | --nwk <filename>]
+  {-o | --output-folder <foldername>} (default is current working folder)
+  {-pre | --prefix <stub>}
+  {-rf | --rates-file <filename>}
+  {-s | --substitution-model <JTT(default)|Dayhoff|LG|WAG|JC|Yang>}
+  {-t | --threads <number>}
+  {-j | --joint (default)}
+  {-m | --marginal <branchpoint-id>}
+  {--indel-method <methodname>} (select one from BEP(default) BEML SICP SICML PSP PSML)
+  {--nogap}
+  {--nonibble}
+  {--save-as <list-of-formats>} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
+  {--time}{--verbose}{--help}
+Inference is a two-stage process:
+  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
+  mapped onto the tree to determine what positions contain actual sequence content
+  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
+  point when performing a joint reconstruction. Alternatively, for each
+  position at a nominated branch point, the probability distribution over all possible
+  characters is inferred when performing a marginal reconstruction.
+  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
+  with nodes that can form a valid sequence with inferred content; a preferred path
+  through the POG is then inferred, nominating a single, best supported sequence.
+Mode of character inference:
+  -j (or --joint) activates joint reconstruction (default),
+  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+
+Required arguments:
+  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
+  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
+
+Optional arguments:
+  -o (or --output-folder) specifies the folder that will be used to save output files,
+    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
+  -sa (or --save-as) lists the files and formats to be generated (see below)
+  --save-all nominates all
+  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
+  -i (or --indel-method) specifies what method to use for inferring indels (see below)
+  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
+  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
+    e.g. as produced by IQ-TREE
+  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
+  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
+  --verbose prints out information about steps undertaken, and --time the time it took to finish
+  -h (or --help) will print out this screen
+
+Files/formats:
+  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
+  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
+  TREE: phylogenetic tree with ancestor nodes labelled
+  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
+  POGS: partial-order graphs of ancestors
+  DOT: partial-order graphs of ancestors in DOT format
+  TREES: position-specific trees with ancestor states labelled
+
+Indel-methods:
+  BEP: bi-directional edge (maximum) parsimony
+  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
+  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
+  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
+  PSP: position-specific (maximum) parsimony
+  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
+  Add '*' to method name for less conservative setting (if available)
+
+Substitution-models:
+  JTT: Jones-Taylor-Thornton (protein; default)
+  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
+  LG: Le-Gasquel (protein)
+  WAG: Whelan-Goldman (protein)
+  JC: Jukes-Cantor (DNA)
+  Yang: Yang's general reversible process model (DNA)
+
+Notes:
+  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
+  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
+  where 20g specifies that 20GB of RAM should be available.
+  ~ This is version 4-July-2022 ~
+  ```
+
 ### What else?
 
 Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.
