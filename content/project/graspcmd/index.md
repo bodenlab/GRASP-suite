@@ -1,6 +1,6 @@
 ---
 title: GRASP-cmd
-summary: Command line version of GRASP. |[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) | [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP. <br><br> [Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
