@@ -17,7 +17,7 @@ For users who would like to automate ASR, there is now a command-line version of
 
 This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
 
-It is implemented in [bnkit](https://github.com/bodenlab/bnkit) on the branch 'POG2020' as a class `asr.GRASP`.
+It is implemented in [bnkit](https://github.com/bodenlab/bnkit) as a class `asr.GRASP`.
 
 
 ### GraspCmd: What can it do?
