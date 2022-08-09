@@ -460,7 +460,7 @@
       <h2 id="grasp-command-line-interface">GRASP command-line interface</h2>
 <p>For users who would like to automate ASR, there is now a command-line version of GRASP that contains all of the indel inference methods. Indels are encoded using either Position Specific (PS), Simple Indel Coding (SIC), or Bi-directional Edge (BE) methods, and inferred using either Parsimony (P) or Maximum Likelihood (ML).</p>
 <p>This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.</p>
-<p>It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> on the branch &lsquo;POG2020&rsquo; as a class <code>asr.GRASP</code>.</p>
+<p>It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> as a class <code>asr.GRASP</code>.</p>
 <h3 id="graspcmd-what-can-it-do">GraspCmd: What can it do?</h3>
 <p>GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the <em>most supported</em> path of sequence inclusions at each ancestor.</p>
 <p>This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.</p>
