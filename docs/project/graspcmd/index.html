@@ -18,7 +18,6 @@
   
     
     
-    
   
   
 
@@ -29,7 +28,7 @@
   
     
   
-  <meta name="description" content="Command line version of GRASP. |[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) | [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)">
+  <meta name="description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
@@ -110,7 +109,7 @@
   <meta property="og:site_name" content="GRASP-suite">
   <meta property="og:url" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
   <meta property="og:title" content="GRASP-cmd | GRASP-suite">
-  <meta property="og:description" content="Command line version of GRASP. |[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) | [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
+  <meta property="og:description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
   <meta property="twitter:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg"><meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2020-03-09T00:00:00&#43;00:00">
@@ -461,7 +460,6 @@
 <p>For users who would like to automate ASR, there is now a command-line version of GRASP that contains all of the indel inference methods. Indels are encoded using either Position Specific (PS), Simple Indel Coding (SIC), or Bi-directional Edge (BE) methods, and inferred using either Parsimony (P) or Maximum Likelihood (ML).</p>
 <p>This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.</p>
 <p>It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> on the branch &lsquo;POG2020&rsquo; as a class <code>asr.GRASP</code>.</p>
-<p>there is also alimited-feature, legacy command-line version of GRASP. It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> on the <code>master</code> branch as a class <code>reconstruction.GraspCmd</code>.</p>
 <h3 id="graspcmd-what-can-it-do">GraspCmd: What can it do?</h3>
 <p>GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the <em>most supported</em> path of sequence inclusions at each ancestor.</p>
 <p>This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.</p>
@@ -476,7 +474,7 @@
 <h3 id="graspcmd-how-do-i-make-it-work-on-my-computer">GraspCmd: How do I make it work on my computer?</h3>
 <p>First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.</p>
 <p>Then, you have a choice: you can clone/download <a href="https://github.com/bodenlab/bnkit">bnkit</a> in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.</p>
-<p>Alternatively, just download the pre-compiled version with all indel inference methods <a href="archive/bnkit_20211215.jar">bnkit JAR file</a>.</p>
+<p>Alternatively, just download the pre-compiled version with all indel inference methods <a href="archive/bnkit.jar">bnkit JAR file</a>.</p>
 <p>Or, the legacy version <a href="archive/bnkit_legacy.jar">bnkit JAR file</a>.</p>
 <h3 id="graspcmd-how-do-i-run-it">GraspCmd: How do I run it?</h3>
 <ol>
@@ -504,6 +502,86 @@
 </span></span></code></pre></div><p>This will print out the arguments that specifies your input data and options.</p>
 <p>A typical command may look like this</p>
 <pre tabindex="0"><code>grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
+</code></pre><p>Full help information -</p>
+<pre tabindex="0"><code>Usage: asr.GRASP
+  [-a | --aln &lt;filename&gt;]
+  [-n | --nwk &lt;filename&gt;]
+  {-o | --output-folder &lt;foldername&gt;} (default is current working folder)
+  {-pre | --prefix &lt;stub&gt;}
+  {-rf | --rates-file &lt;filename&gt;}
+  {-s | --substitution-model &lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&gt;}
+  {-t | --threads &lt;number&gt;}
+  {-j | --joint (default)}
+  {-m | --marginal &lt;branchpoint-id&gt;}
+  {--indel-method &lt;methodname&gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
+  {--nogap}
+  {--nonibble}
+  {--save-as &lt;list-of-formats&gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
+  {--time}{--verbose}{--help}
+Inference is a two-stage process:
+  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
+  mapped onto the tree to determine what positions contain actual sequence content
+  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
+  point when performing a joint reconstruction. Alternatively, for each
+  position at a nominated branch point, the probability distribution over all possible
+  characters is inferred when performing a marginal reconstruction.
+  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
+  with nodes that can form a valid sequence with inferred content; a preferred path
+  through the POG is then inferred, nominating a single, best supported sequence.
+Mode of character inference:
+  -j (or --joint) activates joint reconstruction (default),
+  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+
+Required arguments:
+  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
+  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
+
+Optional arguments:
+  -o (or --output-folder) specifies the folder that will be used to save output files,
+    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
+  -sa (or --save-as) lists the files and formats to be generated (see below)
+  --save-all nominates all
+  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
+  -i (or --indel-method) specifies what method to use for inferring indels (see below)
+  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
+  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
+    e.g. as produced by IQ-TREE
+  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
+  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
+  --verbose prints out information about steps undertaken, and --time the time it took to finish
+  -h (or --help) will print out this screen
+
+Files/formats:
+  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
+  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
+  TREE: phylogenetic tree with ancestor nodes labelled
+  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
+  POGS: partial-order graphs of ancestors
+  DOT: partial-order graphs of ancestors in DOT format
+  TREES: position-specific trees with ancestor states labelled
+
+Indel-methods:
+  BEP: bi-directional edge (maximum) parsimony
+  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
+  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
+  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
+  PSP: position-specific (maximum) parsimony
+  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
+  Add &#39;*&#39; to method name for less conservative setting (if available)
+
+Substitution-models:
+  JTT: Jones-Taylor-Thornton (protein; default)
+  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
+  LG: Le-Gasquel (protein)
+  WAG: Whelan-Goldman (protein)
+  JC: Jukes-Cantor (DNA)
+  Yang: Yang&#39;s general reversible process model (DNA)
+
+Notes:
+  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
+  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
+  where 20g specifies that 20GB of RAM should be available.
+  ~ This is version 4-July-2022 ~
 </code></pre><h3 id="what-else">What else?</h3>
 <p>Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.</p>
 <p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.</p>
@@ -530,6 +608,8 @@
 
 
   
+  
+  
 
 
 
@@ -537,15 +617,13 @@
 
   
   
-  
-    
   
   
   <div class="media author-card" itemscope itemtype="http://schema.org/Person">
     
 
     <div class="media-body">
-      <h5 class="card-title" itemprop="name"><a href="http://bodenlab.github.io/GRASP-suite/"></a></h5>
+      <h5 class="card-title" itemprop="name"><a href="/GRASP-suite/authors/"></a></h5>
       
       
       <ul class="network-icon" aria-hidden="true">
