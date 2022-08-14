@@ -1,12 +1,10 @@
 ---
 title: asr.GRASP
-summary: Command line version of GRASP.<br><br>[Download bnkit.jar](project/graspcmd/archive/bnkit.jar) <br><br> [Download legacy bnkit.jar](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP. [Download bnkit.jar](project/graspcmd/archive/bnkit.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
-
 # Optional external URL for project (replaces project detail page).
-
 image:
   focal_point: Smart
 ---
@@ -83,12 +81,12 @@ java -jar -Xmx16g </path/to/filename.jar> $@
 chmod 755 grasp
 ```
 
-4. Place grasp where you store your executable files, for example - /usr/local/bin
+4. Place grasp where you store your executable files, for example `/usr/local/bin`
 ```console
-mv grasp /usr/local/bin`
+mv grasp /usr/local/bin
 ```
 
-5. Check it works
+5. Check that it works
 ```console
 grasp -h
 ```
@@ -189,6 +187,6 @@ Notes:
 
 Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.
 
-You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.
+You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option `-Xmx60000m`.
 
 The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (--threads 5).

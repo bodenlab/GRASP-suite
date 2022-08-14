@@ -29,7 +29,7 @@
   
     
   
-  <meta name="description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.jar](project/graspcmd/archive/bnkit.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.jar](project/graspcmd/archive/bnkit_legacy.jar)">
+  <meta name="description" content="Command line version of GRASP. [Download bnkit.jar](project/graspcmd/archive/bnkit.jar)">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
@@ -110,7 +110,7 @@
   <meta property="og:site_name" content="GRASP-suite">
   <meta property="og:url" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
   <meta property="og:title" content="asr.GRASP | GRASP-suite">
-  <meta property="og:description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.jar](project/graspcmd/archive/bnkit.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.jar](project/graspcmd/archive/bnkit_legacy.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
+  <meta property="og:description" content="Command line version of GRASP. [Download bnkit.jar](project/graspcmd/archive/bnkit.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
   <meta property="twitter:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg"><meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2020-03-09T00:00:00&#43;00:00">
@@ -495,11 +495,11 @@
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>chmod 755 grasp
 </span></span></code></pre></div><ol start="4">
-<li>Place grasp where you store your executable files, for example - /usr/local/bin</li>
+<li>Place grasp where you store your executable files, for example <code>/usr/local/bin</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>mv grasp /usr/local/bin`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>mv grasp /usr/local/bin
 </span></span></code></pre></div><ol start="5">
-<li>Check it works</li>
+<li>Check that it works</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>grasp -h
 </span></span></code></pre></div><p>This will print out the arguments that specifies your input data and options.</p>
@@ -587,7 +587,7 @@ Notes:
   ~ This is version 4-July-2022 ~
 </code></pre><h3 id="what-else">What else?</h3>
 <p>Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.</p>
-<p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.</p>
+<p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option <code>-Xmx60000m</code>.</p>
 <p>The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (&ndash;threads 5).</p>
 
     </div>
