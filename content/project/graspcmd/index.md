@@ -1,6 +1,6 @@
 ---
 title: GRASP-cmd
-summary: Command line version of GRASP.<br><br>[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) <br><br> [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)
+summary: Command line version of GRASP.<br><br>[Download bnkit.jar](project/graspcmd/archive/bnkit.jar) <br><br> [Download legacy bnkit.jar](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
 date: "2020-03-09T00:00:00Z"
@@ -179,7 +179,7 @@ Notes:
   Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
   where 20g specifies that 20GB of RAM should be available.
   ~ This is version 4-July-2022 ~
-  ```
+```
 
 ### What else?
 
