@@ -42,16 +42,17 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download the jar file&lt;/p&gt;
+&lt;p&gt;We suggest that you then follow steps 2 onwards, but likely you can simply run it from the directory to which it was downloaded, e.g. &lt;code&gt;java -jar ~/Downloads/bnkit.jar&lt;/code&gt; should produce the help info below.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;#!/bin/sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;java -jar -Xmx16g &amp;lt;/path/to/filename.jar&amp;gt; $@&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;java -jar -Xmx16g &amp;lt;/path/to/bnkit.jar&amp;gt; $@&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;(the &lt;code&gt;-Xmx&lt;/code&gt; is optional; see below)&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Change permissions on the bash script&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change permissions on the bash script&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod 755 grasp
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;

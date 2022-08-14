@@ -482,16 +482,17 @@
 <ol>
 <li>
 <p>Download the jar file</p>
+<p>We suggest that you then follow steps 2 onwards, but likely you can simply run it from the directory to which it was downloaded, e.g. <code>java -jar ~/Downloads/bnkit.jar</code> should produce the help info below.</p>
 </li>
 <li>
 <p>Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar</p>
-</li>
-</ol>
 <p><code>#!/bin/sh</code></p>
-<p><code>java -jar -Xmx16g &lt;/path/to/filename.jar&gt; $@</code></p>
+<p><code>java -jar -Xmx16g &lt;/path/to/bnkit.jar&gt; $@</code></p>
 <p>(the <code>-Xmx</code> is optional; see below)</p>
-<ol start="3">
-<li>Change permissions on the bash script</li>
+</li>
+<li>
+<p>Change permissions on the bash script</p>
+</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>chmod 755 grasp
 </span></span></code></pre></div><ol start="4">

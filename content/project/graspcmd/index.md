@@ -64,17 +64,19 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep
 
 1. Download the jar file
 
+   We suggest that you then follow steps 2 onwards, but likely you can simply run it from the directory to which it was downloaded, e.g. `java -jar ~/Downloads/bnkit.jar` should produce the help info below.
+
 2. Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar
 
-`
-#!/bin/sh
-`
+   `
+   #!/bin/sh
+   `
 
-`
-java -jar -Xmx16g </path/to/filename.jar> $@
-` 
+   `
+   java -jar -Xmx16g </path/to/bnkit.jar> $@
+   ` 
 
-(the `-Xmx` is optional; see below)
+   (the `-Xmx` is optional; see below)
 
 3. Change permissions on the bash script
 ```console
