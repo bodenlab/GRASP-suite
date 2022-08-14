@@ -11,22 +11,24 @@ image:
   focal_point: Smart
 ---
 
-## GRASP command-line interface
+## GRASP command-line interface (CLI)
 
-For users who would like to automate ASR, there is now a command-line version of GRASP that contains all of the indel inference methods. Indels are encoded using either Position Specific (PS), Simple Indel Coding (SIC), or Bi-directional Edge (BE) methods, and inferred using either Parsimony (P) or Maximum Likelihood (ML).
+There is a command-line interface of GRASP that can prove useful if you want to automate tasks, run reconstructions on your own dedicated hardware, and/or access the latest features.    This version is essentially a command-line interface to the backend features of the web-based service. It is worth noting that the web-version has the advantage of a visual user interface, but that also means that it may lack the latest functionality.
+
+The command-line version allows access to a variety of indel inference approaches. Beyond the default bi-directional edge encoding (BE), indels are available by either Position Specific (PS), or Simple Indel Coding (SIC). Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML) methods.
 
 This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
 
-It is implemented in [bnkit](https://github.com/bodenlab/bnkit) as a class `asr.GRASP`.
+The command-line interface is implemented in [bnkit](https://github.com/bodenlab/bnkit) as a class `asr.GRASP`.
 
 
-### GraspCmd: What can it do?
+### asr.GRASP: What can it do?
 
-GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the _most supported_ path of sequence inclusions at each ancestor.
+asr.GRASP accepts an alignment (FASTA or Clustal formats) and a phylogenetic tree (Newick format) with concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers insertion and deletion events, which are internally represented via partial-order graphs; it also identifies the _most supported_ path of sequence inclusions at each ancestor.
 
-This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.
+The program can save all ancestor sequences (in the case of joint reconstruction) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can save the partial-order graphs in JSON or as DOT files, which can be visualised with GraphViz. It can also re-save the tree with assigned ancestor labels.
 
-GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model "Yang" (based on "REV" in Yang Z, *J Mol Evol* 1994). At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).
+GRASP was designed primarily for protein sequences but the command-line version incorporates DNA models too. At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).
 
 
 ### Access through Docker
@@ -49,7 +51,7 @@ docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-dock
 This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.
 
 
-### GraspCmd: How do I make it work on my computer?
+### asr.GRASP: How do I make it work on my computer?
 
 First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.
 
@@ -57,10 +59,10 @@ Then, you have a choice: you can clone/download [bnkit](https://github.com/boden
 
 Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). 
 
-Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
+Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep to ensure reproducibility of results presented in the original papers.
 
 
-### GraspCmd: How do I run it? 
+### ask.GRASP: How do I run it? 
 
 1. Download the jar file
 
@@ -71,8 +73,10 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar).
 `
 
 `
-java -jar </path/to/filename.jar> $@
-`
+java -jar -Xmx16g </path/to/filename.jar> $@
+` 
+
+(the `-Xmx` is optional; see below)
 
 3. Change permissions on the bash script
 ```console
@@ -187,4 +191,4 @@ Running the command-line version is typically a quicker affair, at least for sma
 
 You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.
 
-The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (-thr 5).
+The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (--threads 5).
