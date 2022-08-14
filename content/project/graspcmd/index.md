@@ -1,5 +1,5 @@
 ---
-title: GRASP-cmd
+title: asr.GRASP
 summary: Command line version of GRASP.<br><br>[Download bnkit.jar](project/graspcmd/archive/bnkit.jar) <br><br> [Download legacy bnkit.jar](project/graspcmd/archive/bnkit_legacy.jar)
 tags:
 - Inference
@@ -62,7 +62,7 @@ Alternatively, just download the pre-compiled version with all indel inference m
 Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep to ensure reproducibility of results presented in the original papers.
 
 
-### ask.GRASP: How do I run it? 
+### asr.GRASP: How do I run it? 
 
 1. Download the jar file
 

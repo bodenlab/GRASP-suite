@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>GRASP-cmd</title>
+      <title>asr.GRASP</title>
       <link>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
       
@@ -38,7 +38,7 @@
 &lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
 &lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;archive/bnkit.jar&#34;&gt;bnkit JAR file&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Or, the legacy version &lt;a href=&#34;archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
-&lt;h3 id=&#34;askgrasp-how-do-i-run-it&#34;&gt;ask.GRASP: How do I run it?&lt;/h3&gt;
+&lt;h3 id=&#34;asrgrasp-how-do-i-run-it&#34;&gt;asr.GRASP: How do I run it?&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download the jar file&lt;/p&gt;
