@@ -68,13 +68,10 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep
 
 2. Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar
 
-   `
+   ```console
    #!/bin/sh
-   `
-
-   `
    java -jar -Xmx16g </path/to/bnkit.jar> $@
-   ` 
+   ```
 
    (the `-Xmx` is optional; see below)
 
@@ -191,4 +188,4 @@ Running the command-line version is typically a quicker affair, at least for sma
 
 You can probably run a reconstruction with 10,000 sequences on a server, but how "gappy" the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option `-Xmx60000m`.
 
-The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (--threads 5).
+The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (`--threads 5`).
