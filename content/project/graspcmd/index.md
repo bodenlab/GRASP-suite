@@ -80,7 +80,7 @@ Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep
 chmod 755 grasp
 ```
 
-4. Place grasp where you store your executable files, for example `/usr/local/bin`
+4. Place the file `grasp` where you store your executable files, for example `/usr/local/bin`
 ```console
 mv grasp /usr/local/bin
 ```
@@ -98,9 +98,9 @@ A typical command may look like this
 grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
 ```
 
-Full help information -
+Full help information
 
-```
+```text
 Usage: asr.GRASP
   [-a | --aln <filename>]
   [-n | --nwk <filename>]
