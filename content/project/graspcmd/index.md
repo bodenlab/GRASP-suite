@@ -11,11 +11,11 @@ image:
 
 ## GRASP command-line interface (CLI)
 
-There is a command-line interface of GRASP that can prove useful if you want to automate tasks, run reconstructions on your own dedicated hardware, and/or access the latest features.    This version is essentially a command-line interface to the backend features of the web-based service. It is worth noting that the web-version has the advantage of a visual user interface, but that also means that it may lack the latest functionality.
+There is a command-line interface of GRASP that can prove useful if you want to automate tasks, run reconstructions on your own dedicated hardware, and/or access the latest features. This version is essentially a command-line interface to the backend features of the web-based service. It is worth noting that the web-based version has the advantage of a visual user interface, but that also means that it may lack the latest functionality.
 
-The command-line version allows access to a variety of indel inference approaches. Beyond the default bi-directional edge encoding (BE), indels are available by either Position Specific (PS), or Simple Indel Coding (SIC). Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML) methods.
+The command-line version allows access to a variety of indel inference approaches. Beyond the default bi-directional edge encoding (BE), indels are available by either Position Specific (PS), or Simple Indel Coding (SIC). Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML) methods. This gives six methods: PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
 
-This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.
+The command-line version accepts a file with evolutionary rates inferred with the tree, as produced by several tools incl. IQ-TREE2. At the moment the web-based version does not.
 
 The command-line interface is implemented in [bnkit](https://github.com/bodenlab/bnkit) as a class `asr.GRASP`.
 
