@@ -13,10 +13,28 @@
     
     <item>
       <title>SeqScrub: a web tool for automatic cleaning and annotation of FASTA file headers for bioinformatic applications</title>
+      <link>http://bodenlab.github.io/GRASP-suite/content/publication/seqscrub/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/content/publication/seqscrub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SeqScrub: a web tool for automatic cleaning and annotation of FASTA file headers for bioinformatic applications</title>
       <link>http://bodenlab.github.io/GRASP-suite/publication/seqscrub/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/publication/seqscrub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SeqScrub</title>
+      <link>http://bodenlab.github.io/GRASP-suite/content/project/seqscrub/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/content/project/seqscrub/</guid>
       <description></description>
     </item>
     

@@ -18,6 +18,7 @@
   
     
     
+    
   
   
 
@@ -28,7 +29,7 @@
   
     
   
-  <meta name="description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)">
+  <meta name="description" content="Command line version of GRASP. [Download bnkit.jar](project/graspcmd/archive/bnkit.jar)">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
@@ -108,8 +109,8 @@
   
   <meta property="og:site_name" content="GRASP-suite">
   <meta property="og:url" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/">
-  <meta property="og:title" content="GRASP-cmd | GRASP-suite">
-  <meta property="og:description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
+  <meta property="og:title" content="asr.GRASP | GRASP-suite">
+  <meta property="og:description" content="Command line version of GRASP. [Download bnkit.jar](project/graspcmd/archive/bnkit.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg">
   <meta property="twitter:image" content="http://bodenlab.github.io/GRASP-suite/project/graspcmd/featured.jpg"><meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2020-03-09T00:00:00&#43;00:00">
@@ -126,7 +127,7 @@
 
 
 
-  <title>GRASP-cmd | GRASP-suite</title>
+  <title>asr.GRASP | GRASP-suite</title>
 
 </head>
 
@@ -393,11 +394,11 @@
 <div class="container split-header">
   <div class="row justify-content-center">
     <div class="col-lg-8">
-        <img class="img-fluid w-100" src="/GRASP-suite/project/graspcmd/featured_hu0c1a2d9c22d1eca3fe25c42b1142cce5_149194_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        <img class="img-fluid w-100" src="/GRASP-suite/project/graspcmd/featured_hu8a564c7994c9638cfbc0e90219d18d81_721241_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
         
     </div>
     <div class="col-lg-8">
-      <h1 itemprop="name">GRASP-cmd</h1>
+      <h1 itemprop="name">asr.GRASP</h1>
 
       
 
@@ -456,14 +457,15 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <h2 id="grasp-command-line-interface">GRASP command-line interface</h2>
-<p>For users who would like to automate ASR, there is now a command-line version of GRASP that contains all of the indel inference methods. Indels are encoded using either Position Specific (PS), Simple Indel Coding (SIC), or Bi-directional Edge (BE) methods, and inferred using either Parsimony (P) or Maximum Likelihood (ML).</p>
-<p>This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.</p>
-<p>It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> as a class <code>asr.GRASP</code>.</p>
-<h3 id="graspcmd-what-can-it-do">GraspCmd: What can it do?</h3>
-<p>GraspCmd accepts an alignment (FASTA or Clustal formats) and phylogenetic tree (Newick format) with perfectly concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers the most parsimonious insertion and deletion events which are internally represented via partial-order graphs; it also identifies the <em>most supported</em> path of sequence inclusions at each ancestor.</p>
-<p>This command line version of the web service has currently no function to save the (potentially more complex) partial-order graph, but the most supported path always identifies a sequence. The program saves all ancestor sequences (in the case of joint reconstruction, again as FASTA or Clustal) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can also re-save the tree with assigned ancestor labels.</p>
-<p>GRASP was designed primarily for protein sequences but command-line version 0309.2020 incorporates a DNA model &ldquo;Yang&rdquo; (based on &ldquo;REV&rdquo; in Yang Z, <em>J Mol Evol</em> 1994). At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).</p>
+      <h2 id="grasp-command-line-interface-cli">GRASP command-line interface (CLI)</h2>
+<p>There is a command-line interface of GRASP that can prove useful if you want to automate tasks, run reconstructions on your own dedicated hardware, and/or access the latest features. This version is essentially a command-line interface to the backend features of the web-based service. It is worth noting that the web-based version has the advantage of a visual user interface, but that also means that it may lack the latest functionality.</p>
+<p>The command-line version allows access to a variety of indel inference approaches. Beyond the default bi-directional edge encoding (BE), indels are available by either Position Specific (PS), or Simple Indel Coding (SIC). Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML) methods. This gives six methods: PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.</p>
+<p>The command-line version accepts a file with evolutionary rates inferred with the tree, as produced by several tools incl. IQ-TREE2. At the moment the web-based version does not.</p>
+<p>The command-line interface is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> as a class <code>asr.GRASP</code>.</p>
+<h3 id="asrgrasp-what-can-it-do">asr.GRASP: What can it do?</h3>
+<p>asr.GRASP accepts an alignment (FASTA or Clustal formats) and a phylogenetic tree (Newick format) with concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers insertion and deletion events, which are internally represented via partial-order graphs; it also identifies the <em>most supported</em> path of sequence inclusions at each ancestor.</p>
+<p>The program can save all ancestor sequences (in the case of joint reconstruction) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can save the partial-order graphs in JSON or as DOT files, which can be visualised with GraphViz. It can also re-save the tree with assigned ancestor labels.</p>
+<p>GRASP was designed primarily for protein sequences but the command-line version incorporates DNA models too. At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).</p>
 <h3 id="access-through-docker">Access through Docker</h3>
 <p>GRASP is available through Docker Hub at <code>gabefoley/grasp</code></p>
 <p>Once you have docker installed you can</p>
@@ -471,121 +473,123 @@
 </span></span></code></pre></div><p>for example, for me the command looks like (I have test_6.aln and test_6.nwk sitting in a /data folder):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-docker grasp -aln /data/test_6.aln -nwk /data/test_6.nwk -out /data
 </span></span></code></pre></div><p>This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.</p>
-<h3 id="graspcmd-how-do-i-make-it-work-on-my-computer">GraspCmd: How do I make it work on my computer?</h3>
+<h3 id="asrgrasp-how-do-i-make-it-work-on-my-computer">asr.GRASP: How do I make it work on my computer?</h3>
 <p>First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.</p>
 <p>Then, you have a choice: you can clone/download <a href="https://github.com/bodenlab/bnkit">bnkit</a> in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.</p>
 <p>Alternatively, just download the pre-compiled version with all indel inference methods <a href="archive/bnkit.jar">bnkit JAR file</a>.</p>
-<p>Or, the legacy version <a href="archive/bnkit_legacy.jar">bnkit JAR file</a>.</p>
-<h3 id="graspcmd-how-do-i-run-it">GraspCmd: How do I run it?</h3>
+<p>Or, the legacy version <a href="archive/bnkit_legacy.jar">bnkit JAR file</a>, which we keep to ensure reproducibility of results presented in the original papers.</p>
+<h3 id="asrgrasp-how-do-i-run-it">asr.GRASP: How do I run it?</h3>
 <ol>
 <li>
 <p>Download the jar file</p>
+<p>We suggest that you then follow steps 2 onwards, but likely you can simply run it from the directory to which it was downloaded, e.g. <code>java -jar ~/Downloads/bnkit.jar</code> should produce the help info below.</p>
 </li>
 <li>
 <p>Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>#!/bin/sh
+</span></span><span style="display:flex;"><span>java -jar -Xmx16g &lt;/path/to/bnkit.jar&gt; $@
+</span></span></code></pre></div><p>(the <code>-Xmx</code> is optional; see below)</p>
 </li>
-</ol>
-<p><code>#!/bin/sh</code></p>
-<p><code>java -jar &lt;/path/to/filename.jar&gt; $@</code></p>
-<ol start="3">
-<li>Change permissions on the bash script</li>
+<li>
+<p>Change permissions on the bash script</p>
+</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>chmod 755 grasp
 </span></span></code></pre></div><ol start="4">
-<li>Place grasp where you store your executable files, for example - /usr/local/bin</li>
+<li>Place the file <code>grasp</code> where you store your executable files, for example <code>/usr/local/bin</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>mv grasp /usr/local/bin`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>mv grasp /usr/local/bin
 </span></span></code></pre></div><ol start="5">
-<li>Check it works</li>
+<li>Check that it works</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>grasp -h
 </span></span></code></pre></div><p>This will print out the arguments that specifies your input data and options.</p>
 <p>A typical command may look like this</p>
 <pre tabindex="0"><code>grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
-</code></pre><p>Full help information -</p>
-<pre tabindex="0"><code>Usage: asr.GRASP
-  [-a | --aln &lt;filename&gt;]
-  [-n | --nwk &lt;filename&gt;]
-  {-o | --output-folder &lt;foldername&gt;} (default is current working folder)
-  {-pre | --prefix &lt;stub&gt;}
-  {-rf | --rates-file &lt;filename&gt;}
-  {-s | --substitution-model &lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&gt;}
-  {-t | --threads &lt;number&gt;}
-  {-j | --joint (default)}
-  {-m | --marginal &lt;branchpoint-id&gt;}
-  {--indel-method &lt;methodname&gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
-  {--nogap}
-  {--nonibble}
-  {--save-as &lt;list-of-formats&gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
-  {--time}{--verbose}{--help}
-Inference is a two-stage process:
-  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
-  mapped onto the tree to determine what positions contain actual sequence content
-  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
-  point when performing a joint reconstruction. Alternatively, for each
-  position at a nominated branch point, the probability distribution over all possible
-  characters is inferred when performing a marginal reconstruction.
-  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
-  with nodes that can form a valid sequence with inferred content; a preferred path
-  through the POG is then inferred, nominating a single, best supported sequence.
-Mode of character inference:
-  -j (or --joint) activates joint reconstruction (default),
-  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
-
-Required arguments:
-  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
-  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
-
-Optional arguments:
-  -o (or --output-folder) specifies the folder that will be used to save output files,
-    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
-  -sa (or --save-as) lists the files and formats to be generated (see below)
-  --save-all nominates all
-  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
-  -i (or --indel-method) specifies what method to use for inferring indels (see below)
-  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
-  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
-    e.g. as produced by IQ-TREE
-  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
-  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
-  --verbose prints out information about steps undertaken, and --time the time it took to finish
-  -h (or --help) will print out this screen
-
-Files/formats:
-  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
-  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
-  TREE: phylogenetic tree with ancestor nodes labelled
-  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
-  POGS: partial-order graphs of ancestors
-  DOT: partial-order graphs of ancestors in DOT format
-  TREES: position-specific trees with ancestor states labelled
-
-Indel-methods:
-  BEP: bi-directional edge (maximum) parsimony
-  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
-  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
-  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
-  PSP: position-specific (maximum) parsimony
-  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
-  Add &#39;*&#39; to method name for less conservative setting (if available)
-
-Substitution-models:
-  JTT: Jones-Taylor-Thornton (protein; default)
-  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
-  LG: Le-Gasquel (protein)
-  WAG: Whelan-Goldman (protein)
-  JC: Jukes-Cantor (DNA)
-  Yang: Yang&#39;s general reversible process model (DNA)
-
-Notes:
-  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
-  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
-  where 20g specifies that 20GB of RAM should be available.
-  ~ This is version 4-July-2022 ~
-</code></pre><h3 id="what-else">What else?</h3>
+</code></pre><p>Full help information</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Usage: asr.GRASP
+</span></span><span style="display:flex;"><span>  [-a | --aln &lt;filename&gt;]
+</span></span><span style="display:flex;"><span>  [-n | --nwk &lt;filename&gt;]
+</span></span><span style="display:flex;"><span>  {-o | --output-folder &lt;foldername&gt;} (default is current working folder)
+</span></span><span style="display:flex;"><span>  {-pre | --prefix &lt;stub&gt;}
+</span></span><span style="display:flex;"><span>  {-rf | --rates-file &lt;filename&gt;}
+</span></span><span style="display:flex;"><span>  {-s | --substitution-model &lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&gt;}
+</span></span><span style="display:flex;"><span>  {-t | --threads &lt;number&gt;}
+</span></span><span style="display:flex;"><span>  {-j | --joint (default)}
+</span></span><span style="display:flex;"><span>  {-m | --marginal &lt;branchpoint-id&gt;}
+</span></span><span style="display:flex;"><span>  {--indel-method &lt;methodname&gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
+</span></span><span style="display:flex;"><span>  {--nogap}
+</span></span><span style="display:flex;"><span>  {--nonibble}
+</span></span><span style="display:flex;"><span>  {--save-as &lt;list-of-formats&gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
+</span></span><span style="display:flex;"><span>  {--time}{--verbose}{--help}
+</span></span><span style="display:flex;"><span>Inference is a two-stage process:
+</span></span><span style="display:flex;"><span>  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
+</span></span><span style="display:flex;"><span>  mapped onto the tree to determine what positions contain actual sequence content
+</span></span><span style="display:flex;"><span>  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
+</span></span><span style="display:flex;"><span>  point when performing a joint reconstruction. Alternatively, for each
+</span></span><span style="display:flex;"><span>  position at a nominated branch point, the probability distribution over all possible
+</span></span><span style="display:flex;"><span>  characters is inferred when performing a marginal reconstruction.
+</span></span><span style="display:flex;"><span>  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
+</span></span><span style="display:flex;"><span>  with nodes that can form a valid sequence with inferred content; a preferred path
+</span></span><span style="display:flex;"><span>  through the POG is then inferred, nominating a single, best supported sequence.
+</span></span><span style="display:flex;"><span>Mode of character inference:
+</span></span><span style="display:flex;"><span>  -j (or --joint) activates joint reconstruction (default),
+</span></span><span style="display:flex;"><span>  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Required arguments:
+</span></span><span style="display:flex;"><span>  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
+</span></span><span style="display:flex;"><span>  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Optional arguments:
+</span></span><span style="display:flex;"><span>  -o (or --output-folder) specifies the folder that will be used to save output files,
+</span></span><span style="display:flex;"><span>    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
+</span></span><span style="display:flex;"><span>  -sa (or --save-as) lists the files and formats to be generated (see below)
+</span></span><span style="display:flex;"><span>  --save-all nominates all
+</span></span><span style="display:flex;"><span>  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
+</span></span><span style="display:flex;"><span>  -i (or --indel-method) specifies what method to use for inferring indels (see below)
+</span></span><span style="display:flex;"><span>  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
+</span></span><span style="display:flex;"><span>  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
+</span></span><span style="display:flex;"><span>    e.g. as produced by IQ-TREE
+</span></span><span style="display:flex;"><span>  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
+</span></span><span style="display:flex;"><span>  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
+</span></span><span style="display:flex;"><span>  --verbose prints out information about steps undertaken, and --time the time it took to finish
+</span></span><span style="display:flex;"><span>  -h (or --help) will print out this screen
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Files/formats:
+</span></span><span style="display:flex;"><span>  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
+</span></span><span style="display:flex;"><span>  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
+</span></span><span style="display:flex;"><span>  TREE: phylogenetic tree with ancestor nodes labelled
+</span></span><span style="display:flex;"><span>  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
+</span></span><span style="display:flex;"><span>  POGS: partial-order graphs of ancestors
+</span></span><span style="display:flex;"><span>  DOT: partial-order graphs of ancestors in DOT format
+</span></span><span style="display:flex;"><span>  TREES: position-specific trees with ancestor states labelled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Indel-methods:
+</span></span><span style="display:flex;"><span>  BEP: bi-directional edge (maximum) parsimony
+</span></span><span style="display:flex;"><span>  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
+</span></span><span style="display:flex;"><span>  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
+</span></span><span style="display:flex;"><span>  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
+</span></span><span style="display:flex;"><span>  PSP: position-specific (maximum) parsimony
+</span></span><span style="display:flex;"><span>  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
+</span></span><span style="display:flex;"><span>  Add &#39;*&#39; to method name for less conservative setting (if available)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Substitution-models:
+</span></span><span style="display:flex;"><span>  JTT: Jones-Taylor-Thornton (protein; default)
+</span></span><span style="display:flex;"><span>  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
+</span></span><span style="display:flex;"><span>  LG: Le-Gasquel (protein)
+</span></span><span style="display:flex;"><span>  WAG: Whelan-Goldman (protein)
+</span></span><span style="display:flex;"><span>  JC: Jukes-Cantor (DNA)
+</span></span><span style="display:flex;"><span>  Yang: Yang&#39;s general reversible process model (DNA)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Notes:
+</span></span><span style="display:flex;"><span>  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
+</span></span><span style="display:flex;"><span>  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
+</span></span><span style="display:flex;"><span>  where 20g specifies that 20GB of RAM should be available.
+</span></span><span style="display:flex;"><span>  ~ This is version 4-July-2022 ~
+</span></span></code></pre></div><h3 id="what-else">What else?</h3>
 <p>Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.</p>
-<p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.</p>
-<p>The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (-thr 5).</p>
+<p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option <code>-Xmx60000m</code>.</p>
+<p>The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (<code>--threads 5</code>).</p>
 
     </div>
 
@@ -608,8 +612,6 @@ Notes:
 
 
   
-  
-  
 
 
 
@@ -617,13 +619,15 @@ Notes:
 
   
   
+  
+    
   
   
   <div class="media author-card" itemscope itemtype="http://schema.org/Person">
     
 
     <div class="media-body">
-      <h5 class="card-title" itemprop="name"><a href="/GRASP-suite/authors/"></a></h5>
+      <h5 class="card-title" itemprop="name"><a href="http://bodenlab.github.io/GRASP-suite/"></a></h5>
       
       
       <ul class="network-icon" aria-hidden="true">
