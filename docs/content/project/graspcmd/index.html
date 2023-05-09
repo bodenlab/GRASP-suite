@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)">
+
+  
+  <link rel="alternate" hreflang="en-us" href="http://bodenlab.github.io/GRASP-suite/content/project/graspcmd/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#fc6f5c">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/GRASP-suite/css/academia.min.03201cd6bed7efbd4f218dff1d3c6242.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/GRASP-suite/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="http://bodenlab.github.io/GRASP-suite/content/project/graspcmd/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="GRASP-suite">
+  <meta property="og:url" content="http://bodenlab.github.io/GRASP-suite/content/project/graspcmd/">
+  <meta property="og:title" content="GRASP-cmd | GRASP-suite">
+  <meta property="og:description" content="Command line version of GRASP.&lt;br&gt;&lt;br&gt;[Download bnkit.JAR](project/graspcmd/archive/bnkit_20211215.jar) &lt;br&gt;&lt;br&gt; [Download legacy bnkit.JAR](project/graspcmd/archive/bnkit_legacy.jar)"><meta property="og:image" content="http://bodenlab.github.io/GRASP-suite/content/project/graspcmd/featured.jpg">
+  <meta property="twitter:image" content="http://bodenlab.github.io/GRASP-suite/content/project/graspcmd/featured.jpg"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-03-09T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-03-09T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>GRASP-cmd | GRASP-suite</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">GRASP-suite</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#hero"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#tools"><span>Tools</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/GRASP-suite/#experience"><span>Resources</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container split-header">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+        <img class="img-fluid w-100" src="/GRASP-suite/content/project/graspcmd/featured_hu8a564c7994c9638cfbc0e90219d18d81_753940_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        
+    </div>
+    <div class="col-lg-8">
+      <h1 itemprop="name">GRASP-cmd</h1>
+
+      
+
+      
+
+
+
+<meta content="2020-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-03-09 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Mar 9, 2020</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <h2 id="grasp-command-line-interface-cli">GRASP command-line interface (CLI)</h2>
+<p>For users who would like to automate ASR, there is now a command-line interface to GRASP&rsquo;s backend that contains optional indel inference methods. In addition to the default bi-directional edge encoding, indels can use either Position Specific (PS) or Simple Indel Coding (SIC); Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML).</p>
+<p>This gives six methods - PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.</p>
+<p>It is implemented in <a href="https://github.com/bodenlab/bnkit">bnkit</a> as a class <code>asr.GRASP</code>.</p>
+<h3 id="grasp-cli-what-can-it-do">GRASP CLI: What can it do?</h3>
+<p>GRASP CLI accepts an alignment (FASTA or Clustal formats) and a phylogenetic tree (Newick format) with  concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood, using standard evolutionary models (protein and DNA). In the process, the program also infers insertion and deletion events which are internally represented via so-called partial-order graphs; it also identifies the <em>most supported</em> path of sequence inclusions at each ancestor.</p>
+<p>The program saves all ancestor sequences (in the case of joint reconstruction) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It also re-saves the tree with assigned ancestor labels.</p>
+<p>GRASP was designed primarily for protein sequences but it incorporates a few DNA models. At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).</p>
+<h3 id="access-through-docker">Access through Docker</h3>
+<p>GRASP is available through Docker Hub at <code>gabefoley/grasp</code></p>
+<p>Once you have docker installed you can</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>docker run -it -v {full path to where your data is located}:/data gabefoley/grasp grasp -aln /data/{name of your alignment file}.aln -nwk /data/{name of your newick file}.nwk -out /data
+</span></span></code></pre></div><p>for example, for me the command looks like (I have test_6.aln and test_6.nwk sitting in a /data folder):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-docker grasp -aln /data/test_6.aln -nwk /data/test_6.nwk -out /data
+</span></span></code></pre></div><p>This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.</p>
+<h3 id="grasp-cli-how-do-i-make-it-work-on-my-computer">GRASP CLI: How do I make it work on my computer?</h3>
+<p>First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.</p>
+<p>Then, you have a choice: you can clone/download <a href="https://github.com/bodenlab/bnkit">bnkit</a> in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.</p>
+<p>Alternatively, just download the pre-compiled version <a href="archive/bnkit.jar">bnkit JAR file</a>.</p>
+<p>Or, the legacy version <a href="archive/bnkit_legacy.jar">bnkit JAR file</a>, which is lacks many features but is here provided to reproduce results presented in the original paper.</p>
+<h3 id="grasp-cli-how-do-i-run-it">GRASP CLI: How do I run it?</h3>
+<ol>
+<li>
+<p>Download the jar file</p>
+</li>
+<li>
+<p>Create a bash script grasp that contains the following two lines, replacing the path with the path to your downloaded jar</p>
+</li>
+</ol>
+<p><code>#!/bin/sh</code></p>
+<p><code>java -jar &lt;/path/to/filename.jar&gt; $@</code></p>
+<ol start="3">
+<li>Change permissions on the bash script</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>chmod 755 grasp
+</span></span></code></pre></div><ol start="4">
+<li>Place grasp where you store your executable files, for example - /usr/local/bin</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>mv grasp /usr/local/bin`
+</span></span></code></pre></div><ol start="5">
+<li>Check it works</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>grasp -h
+</span></span></code></pre></div><p>This will print out the arguments that specifies your input data and options.</p>
+<p>A typical command may look like this</p>
+<pre tabindex="0"><code>grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
+</code></pre><p>Full help information -</p>
+<pre tabindex="0"><code>Usage: asr.GRASP
+  [-a | --aln &lt;filename&gt;]
+  [-n | --nwk &lt;filename&gt;]
+  {-o | --output-folder &lt;foldername&gt;} (default is current working folder)
+  {-pre | --prefix &lt;stub&gt;}
+  {-rf | --rates-file &lt;filename&gt;}
+  {-s | --substitution-model &lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&gt;}
+  {-t | --threads &lt;number&gt;}
+  {-j | --joint (default)}
+  {-m | --marginal &lt;branchpoint-id&gt;}
+  {--indel-method &lt;methodname&gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
+  {--nogap}
+  {--nonibble}
+  {--save-as &lt;list-of-formats&gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
+  {--time}{--verbose}{--help}
+Inference is a two-stage process:
+  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
+  mapped onto the tree to determine what positions contain actual sequence content
+  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
+  point when performing a joint reconstruction. Alternatively, for each
+  position at a nominated branch point, the probability distribution over all possible
+  characters is inferred when performing a marginal reconstruction.
+  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
+  with nodes that can form a valid sequence with inferred content; a preferred path
+  through the POG is then inferred, nominating a single, best supported sequence.
+Mode of character inference:
+  -j (or --joint) activates joint reconstruction (default),
+  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+
+Required arguments:
+  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
+  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
+
+Optional arguments:
+  -o (or --output-folder) specifies the folder that will be used to save output files,
+    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
+  -sa (or --save-as) lists the files and formats to be generated (see below)
+  --save-all nominates all
+  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
+  -i (or --indel-method) specifies what method to use for inferring indels (see below)
+  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
+  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
+    e.g. as produced by IQ-TREE
+  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
+  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
+  --verbose prints out information about steps undertaken, and --time the time it took to finish
+  -h (or --help) will print out this screen
+
+Files/formats:
+  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
+  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
+  TREE: phylogenetic tree with ancestor nodes labelled
+  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
+  POGS: partial-order graphs of ancestors (in JSON)
+  DOT: partial-order graphs of ancestors in DOT format
+  TREES: position-specific trees with ancestor states labelled
+
+Indel-methods:
+  BEP: bi-directional edge (maximum) parsimony
+  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
+  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
+  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
+  PSP: position-specific (maximum) parsimony
+  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
+  Add &#39;*&#39; to method name for less conservative setting (if available)
+
+Substitution-models:
+  JTT: Jones-Taylor-Thornton (protein; default)
+  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
+  LG: Le-Gasquel (protein)
+  WAG: Whelan-Goldman (protein)
+  JC: Jukes-Cantor (DNA)
+  Yang: Yang&#39;s general reversible process model (DNA)
+
+Notes:
+  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
+  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
+  where 20g specifies that 20GB of RAM should be available.
+  ~ This is version 4-July-2022 ~
+</code></pre><h3 id="what-else">What else?</h3>
+<p>Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.</p>
+<p>You can probably run a reconstruction with 10,000 sequences on a server, but how &ldquo;gappy&rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option -Xmx60000m.</p>
+<p>The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (&ndash;threads 5).</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/GRASP-suite/tags/inference/">Inference</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="http://bodenlab.github.io/GRASP-suite/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/GRASP-suite/project/graspcmd/">asr.GRASP</a></li>
+          
+          <li><a href="/GRASP-suite/content/publication/grasp/">Identifying and engineering ancient variants of enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)</a></li>
+          
+          <li><a href="/GRASP-suite/publication/grasp/">Identifying and engineering ancient variants of enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)</a></li>
+          
+          <li><a href="/GRASP-suite/project/grasp/">GRASP</a></li>
+          
+          <li><a href="/GRASP-suite/content/project/grasp/">GRASP</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/GRASP-suite/js/academia.min.b8df6754deca2dd84ba46243e6dcb3e3.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
