@@ -55,7 +55,9 @@ First, you will need Java version 8 or newer. Any operating system with Java sho
 
 Then, you have a choice: you can clone/download [bnkit](https://github.com/bodenlab/bnkit) in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.
 
-Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). This is the 4th of May 2023 version. 
+Alternatively, just download the pre-compiled version with all indel inference methods [bnkit JAR file](archive/bnkit.jar). This is the 4th of May 2023 version.
+
+We also offer a version compiled using [Java 11](archive/bnkit_java_11.jar). 
 
 Or, the legacy version [bnkit JAR file](archive/bnkit_legacy.jar), which we keep to ensure reproducibility of results presented in the original papers.
 
