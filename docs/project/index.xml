@@ -37,6 +37,7 @@
 &lt;p&gt;First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.&lt;/p&gt;
 &lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
 &lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;archive/bnkit.jar&#34;&gt;bnkit JAR file&lt;/a&gt;. This is the 4th of May 2023 version.&lt;/p&gt;
+&lt;p&gt;We also offer a version compiled using &lt;a href=&#34;archive/bnkit_java_11.jar&#34;&gt;Java 11&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Or, the legacy version &lt;a href=&#34;archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
 &lt;h3 id=&#34;asrgrasp-how-do-i-run-it&#34;&gt;asr.GRASP: How do I run it?&lt;/h3&gt;
 &lt;ol&gt;
