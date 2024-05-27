@@ -26,19 +26,12 @@
 &lt;p&gt;asr.GRASP accepts an alignment (FASTA or Clustal formats) and a phylogenetic tree (Newick format) with concordant labels, to infer ancestor sequences by joint or marginal reconstruction by maximum likelihood. In the process, the program also infers insertion and deletion events, which are internally represented via partial-order graphs; it also identifies the &lt;em&gt;most supported&lt;/em&gt; path of sequence inclusions at each ancestor.&lt;/p&gt;
 &lt;p&gt;The program can save all ancestor sequences (in the case of joint reconstruction) or one sequence (in the case of marginal reconstrution; optionally with character state distributions as a TSV file). It can save the partial-order graphs in JSON or as DOT files, which can be visualised with GraphViz. It can also re-save the tree with assigned ancestor labels.&lt;/p&gt;
 &lt;p&gt;GRASP was designed primarily for protein sequences but the command-line version incorporates DNA models too. At this stage we have not tested DNA sequence functionality extensively, nor have we developed specific features around DNA sequences (codon-centric analyses, user-provided background stats, etc).&lt;/p&gt;
-&lt;h3 id=&#34;access-through-docker&#34;&gt;Access through Docker&lt;/h3&gt;
-&lt;p&gt;GRASP is available through Docker Hub at &lt;code&gt;gabefoley/grasp&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Once you have docker installed you can&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -v {full path to where your data is located}:/data gabefoley/grasp grasp -aln /data/{name of your alignment file}.aln -nwk /data/{name of your newick file}.nwk -out /data
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;for example, for me the command looks like (I have test_6.aln and test_6.nwk sitting in a /data folder):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-docker grasp -aln /data/test_6.aln -nwk /data/test_6.nwk -out /data
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.&lt;/p&gt;
 &lt;h3 id=&#34;asrgrasp-how-do-i-make-it-work-on-my-computer&#34;&gt;asr.GRASP: How do I make it work on my computer?&lt;/h3&gt;
 &lt;p&gt;First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.&lt;/p&gt;
 &lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
-&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;archive/bnkit.jar&#34;&gt;bnkit JAR file&lt;/a&gt;. This is the 4th of May 2023 version.&lt;/p&gt;
-&lt;p&gt;We also offer a version compiled using &lt;a href=&#34;archive/bnkit_java_11.jar&#34;&gt;Java 11&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Or, the legacy version &lt;a href=&#34;archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
+&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_19.jar&#34;&gt;bnkit JAR file&lt;/a&gt;. This is the 21nd of March 2024 version and compiled with a recent version of Java (19).&lt;/p&gt;
+&lt;p&gt;We also offer a version compiled using &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_11.jar&#34;&gt;Java 11&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Or, the legacy version &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
 &lt;h3 id=&#34;asrgrasp-how-do-i-run-it&#34;&gt;asr.GRASP: How do I run it?&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -68,86 +61,110 @@
 &lt;p&gt;A typical command may look like this&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;grasp -aln 500_2112_dhad_18032019.aln -nwk r_500_2112_dhad_18032019.nwk -out recon_0500.aln -verbose -gap -thr 5
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Full help information&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: asr.GRASP
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [-a | --aln &amp;lt;filename&amp;gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [-n | --nwk &amp;lt;filename&amp;gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-o | --output-folder &amp;lt;foldername&amp;gt;} (default is current working folder)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-pre | --prefix &amp;lt;stub&amp;gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-rf | --rates-file &amp;lt;filename&amp;gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-s | --substitution-model &amp;lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&amp;gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-t | --threads &amp;lt;number&amp;gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-j | --joint (default)}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {-m | --marginal &amp;lt;branchpoint-id&amp;gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {--indel-method &amp;lt;methodname&amp;gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {--nogap}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {--nonibble}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {--save-as &amp;lt;list-of-formats&amp;gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB POGS DOT TREES)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {--time}{--verbose}{--help}
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: asr.GRASP 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	[-a | --aln &amp;lt;filename&amp;gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	[-n | --nwk &amp;lt;filename&amp;gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-o | --output-folder &amp;lt;foldername&amp;gt;} (default is current working folder, or input folder if available)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-i | --input-folder &amp;lt;foldername&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-pre | --prefix &amp;lt;stub&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-rf | --rates-file &amp;lt;filename&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-s | --substitution-model &amp;lt;JTT(default)|Dayhoff|LG|WAG|JC|Yang&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-t | --threads &amp;lt;number&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-j | --joint (default)}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{-m | --marginal &amp;lt;branchpoint-id&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--indel-method &amp;lt;methodname&amp;gt;} (select one from BEP(default) BEML SICP SICML PSP PSML)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--supported-path &amp;lt;methodname&amp;gt;} (select one from DIJKSTRA(default) ASTAR)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--nogap}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--nonibble}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--exclude-noedge}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--save-as &amp;lt;list-of-formats&amp;gt;} (select multiple from FASTA CLUSTAL TREE DISTRIB ASR DOT TREES)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--save-all} (saves reconstruction with ALL formats)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--save-tree} (bypasses inference and re-saves the tree with ancestor nodes labelled as per GRASP&amp;#39;s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	depth-first labelling scheme starting with N0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--save-poag { &amp;lt;branchpoint-id&amp;gt; } (bypasses inference and saves the input alignment as a POAG
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(partial order alignment graph of extant sequences under specified ancestor [default N0])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{--time}{--verbose}{--help}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Inference is a two-stage process:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mapped onto the tree to determine what positions contain actual sequence content
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (2) For each ancestral position, the most probable character is assigned to each phylogenetic branch
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  point when performing a joint reconstruction. Alternatively, for each
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  position at a nominated branch point, the probability distribution over all possible
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  characters is inferred when performing a marginal reconstruction.
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  with nodes that can form a valid sequence with inferred content; a preferred path
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  through the POG is then inferred, nominating a single, best supported sequence.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(1) A history of indel events is inferred by either maximum likelihood or maximum parsimony and 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	mapped onto the tree to determine what positions contain actual sequence content
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(2) For each ancestral position, the most probable character is assigned to each phylogenetic branch 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	point when performing a joint reconstruction. Alternatively, for each 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	position at a nominated branch point, the probability distribution over all possible 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	characters is inferred when performing a marginal reconstruction.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Finally, edges are drawn to represent all inferred combinations of indels to form an ancestor POG 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	with nodes that can form a valid sequence with inferred content; a preferred path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	through the POG is then inferred, nominating a single, best supported sequence.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mode of character inference:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -j (or --joint) activates joint reconstruction (default),
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-j (or --joint) activates joint reconstruction (default), 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-m (or --marginal) activates marginal reconstruction (requires a branch-point to be nominated)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--onlyindel disengages the stage of character state inference
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Required arguments:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -a (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-a (or --aln) must specify the name of a multiple-sequence alignment file on FASTA or CLUSTAL format
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-n (or --nwk) must specify the name of a phylogenetic-tree file on Newick format
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Optional arguments:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -o (or --output-folder) specifies the folder that will be used to save output files,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    e.g. inferred ancestor or ancestors, tree, etc. as specified by format
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -sa (or --save-as) lists the files and formats to be generated (see below)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --save-all nominates all
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -i (or --indel-method) specifies what method to use for inferring indels (see below)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    e.g. as produced by IQ-TREE
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --nogap means that the gap-character is excluded in the resulting output (when the format allows)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --verbose prints out information about steps undertaken, and --time the time it took to finish
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -h (or --help) will print out this screen
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-o (or --output-folder) specifies the folder that will be used to save output files,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		e.g. inferred ancestor or ancestors, tree, etc. as specified by format
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-i (or --input-folder) skips indel inference, and loads a previous reconstruction from specified folder
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-sa (or --save-as) lists the files and formats to be generated (see below)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--save-all nominates all
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-pre (or --prefix) specifies a stub that is added to result filenames (default is the prefix of the alignment file)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-indel (or --indel-method) specifies what method to use for inferring indels (see below)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-s (or --substitution-model) specifies what evolutionary model to use for inferring character states (see below)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-rf (or --rates-file) specifies a tabulated file with relative, position-specific rates
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		We recommend the use of this generally, but specifically for trees with great distances, and with biologically diverse entries
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		As an example, IQ-TREE produces rates on the accepted format
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--include-extants means that extants are included in output files (when the format allows)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--nogap means that the gap-character is excluded in the resulting output (when the format allows)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--nonibble de-activates the removal of indices in partial order graphs that cannot form a path from start to end
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--orphans de-activates the removal of orphaned indel trees
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--exclude-noedge removes non-existing edge as an option for parsimony in BEP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	--verbose prints out information about steps undertaken, and --time the time it took to finish
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-h (or --help) will print out this screen
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Files/formats:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  CLUSTAL: sequences (most preferred path at each ancestor, gapped)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  TREE: phylogenetic tree with ancestor nodes labelled
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  POGS: partial-order graphs of ancestors
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DOT: partial-order graphs of ancestors in DOT format
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  TREES: position-specific trees with ancestor states labelled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Files/formats: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	FASTA: sequences (most preferred path at each ancestor, gapped or not gapped)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	CLUSTAL: sequences (most preferred path at each ancestor, gapped)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	TREE: phylogenetic tree with ancestor nodes labelled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	DISTRIB: character distributions for each position (indexed by POG, only available for marginal reconstruction)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	ASR: complete reconstruction as JSON, incl. POGs of ancestors and extants, and tree (ASR.json)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	DOT: partial-order graphs of ancestors in DOT format
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	TREES: position-specific trees with ancestor states labelled
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Indel-methods:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  BEP: bi-directional edge (maximum) parsimony
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  PSP: position-specific (maximum) parsimony
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  PSML: position-specific maximum likelihood (uses uniform evolutionary model)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Add &amp;#39;*&amp;#39; to method name for less conservative setting (if available)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Indel-methods: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	BEP: bi-directional edge (maximum) parsimony
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	BEML: bi-directional edge maximum likelihood (uses uniform evolutionary model akin to JC)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	SICP: simple indel-coding (maximum) parsimony (based on Simmons and Ochoterena)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	SICML: simple indel-coding maximum likelihood (uses uniform evolutionary model)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	PSP: position-specific (maximum) parsimony
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	PSML: position-specific maximum likelihood (uses uniform evolutionary model)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Add &amp;#39;*&amp;#39; to method name for less conservative setting (if available)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Substitution-models:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  JTT: Jones-Taylor-Thornton (protein; default)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  LG: Le-Gasquel (protein)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  WAG: Whelan-Goldman (protein)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  JC: Jukes-Cantor (DNA)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Yang: Yang&amp;#39;s general reversible process model (DNA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Substitution-models: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	JTT: Jones-Taylor-Thornton (protein; default)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Dayhoff: Dayhoff-Schwartz-Orcutt (protein)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	LG: Le-Gasquel (protein)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	WAG: Whelan-Goldman (protein)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	JC: Jukes-Cantor (DNA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Yang: Yang&amp;#39;s general reversible process model (DNA)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Notes:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Greater number of threads may improve processing time, but implies greater memory requirement (default is 1).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  where 20g specifies that 20GB of RAM should be available.
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ~ This is version 4-July-2022 ~
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Notes: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Greater number of threads may improve processing time up to a point when coordination chokes performance; default is 4 threads.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Running GRASP requires large memory and in most cases Java needs to be run with the option -Xmx20g, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	where 20g specifies that 20GB of RAM should be available.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;~ This is version 21-Mar-2024 ~
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;access-through-docker&#34;&gt;Access through Docker&lt;/h3&gt;
+&lt;p&gt;GRASP is available through Docker Hub at &lt;code&gt;gabefoley/grasp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once you have docker installed you can&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -v {full path to where your data is located}:/data gabefoley/grasp grasp -aln /data/{name of your alignment file}.aln -nwk /data/{name of your newick file}.nwk -out /data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;for example, for me the command looks like (I have test_6.aln and test_6.nwk sitting in a /data folder):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -v /Users/coolusername/Documents/code/grasp/data:/data grasp-docker grasp -aln /data/test_6.aln -nwk /data/test_6.nwk -out /data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This should give you a file, GRASP_ancestors.fasta appearing in folder: /Users/coolusername/Documents/code/grasp/data.&lt;/p&gt;
+&lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
 &lt;p&gt;Running the command-line version is typically a quicker affair, at least for smaller reconstructions, but it requires decent hardware. A reconstruction of less than 1,000 sequences should take less than 10 minutes.&lt;/p&gt;
 &lt;p&gt;You can probably run a reconstruction with 10,000 sequences on a server, but how &amp;ldquo;gappy&amp;rdquo; the alignment is will also play a part in deciding this. If the alignment is reasonably clean, a powerful, modern laptop with at least 16GB of memory, can do this in under a day. If the alignment covers a diverse family, you will probably need a lot more memory. We recommend you set the Java heap size to 60GB RAM, which you can using the option &lt;code&gt;-Xmx60000m&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The rough estimates above assume you use multiple threads; we recommend 5 or so on decent hardware (&lt;code&gt;--threads 5&lt;/code&gt;).&lt;/p&gt;
@@ -169,7 +186,7 @@
 &lt;h3 id=&#34;graspcmd-how-do-i-run-it&#34;&gt;GraspCmd: How do I run it?&lt;/h3&gt;
 &lt;p&gt;Follow the User&amp;rsquo;s Guide.&lt;/p&gt;
 &lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
-&lt;p&gt;There is a &lt;a href=&#34;&#34;&gt;command-line version&lt;/a&gt; to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/&#34;&gt;command-line version&lt;/a&gt; to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
 </description>
     </item>
     

@@ -20,7 +20,7 @@
       <description>&lt;h3 id=&#34;install-key-programs&#34;&gt;Install key programs&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;BLAST+ executables (NCBI commandline tool; &lt;a href=&#34;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;amp;PAGE_TYPE=BlastDocs&amp;amp;DOC_TYPE=Download&#34;&gt;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;amp;PAGE_TYPE=BlastDocs&amp;amp;DOC_TYPE=Download&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;BLAST+ executables (NCBI commandline tool; &lt;a href=&#34;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download&#34;&gt;https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=Download&lt;/a&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Python distribution v3.x, recommend Anaconda (&lt;a href=&#34;https://www.anaconda.com/distribution/&#34;&gt;https://www.anaconda.com/distribution/&lt;/a&gt;)&lt;/p&gt;
