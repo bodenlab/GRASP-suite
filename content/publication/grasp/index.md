@@ -1,5 +1,5 @@
 ---
-title: "Identifying and engineering ancient variants of enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)"
+title: "Engineering indel and substitution variants of diverse and ancient enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)"
 authors:
 - Gabriel Foley 
 - Ariane Mora 
@@ -24,7 +24,7 @@ authors:
 - Elizabeth MJ Gillam 
 - Mikael Boden
 
-date: "2019-12-31T00:00:00Z"
+date: "2022"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -37,13 +37,17 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["3"]
 
 # Publication name and optional abbreviated publication name.
-publication: "bioRxiv"
-publication_short: "bioRxiv"
+publication: "PLOS Computational Biology"
+publication_short: "PLOS Comput Biol"
 
-abstract: We developed Graphical Representation of Ancestral Sequence Predictions (GRASP) to infer and explore ancestral variants of protein families with more than 10,000 members. GRASP uses partial order graphs to represent homology in very large datasets, which are intractable with current inference tools and may, for example, be used to engineer proteins by identifying ancient variants of enzymes. We demonstrate that (1) across three distinct enzyme families, GRASP predicts ancestor sequences, all of which demonstrate enzymatic activity, (2) within-family insertions and deletions can be used as building blocks to support the engineering of biologically active ancestors via a new source of ancestral variation, and (3) generous inclusion of sequence data encompassing great diversity leads to less variance in ancestor sequence.
+abstract: Ancestral sequence reconstruction is a technique that is gaining widespread use in molecular evolution studies and protein engineering. Accurate reconstruction requires the ability to handle appropriately large numbers of sequences, as well as insertion and deletion (indel) events, but available approaches exhibit limitations. To address these limitations, we developed Graphical Representation of Ancestral Sequence Predictions (GRASP), which efficiently implements maximum likelihood methods to enable the inference of ancestors of families with more than 10,000 members. GRASP implements partial order graphs (POGs) to represent and infer insertion and deletion events across ancestors, enabling the identification of building blocks for protein engineering.
+
+To validate the capacity to engineer novel proteins from realistic data, we predicted ancestor sequences across three distinct enzyme families: glucose-methanol-choline (GMC) oxidoreductases, cytochromes P450, and dihydroxy/sugar acid dehydratases (DHAD). All tested ancestors demonstrated enzymatic activity. Our study demonstrates the ability of GRASP (1) to support large data sets over 10,000 sequences and (2) to employ insertions and deletions to identify building blocks for engineering biologically active ancestors, by exploring variation over evolutionary time.
 
 # Summary. An optional shortened abstract.
-summary: We developed Graphical Representation of Ancestral Sequence Predictions (GRASP) to infer and explore ancestral variants of protein families with more than 10,000 members. GRASP uses partial order graphs to represent homology in very large datasets, which are intractable with current inference tools and may, for example, be used to engineer proteins by identifying ancient variants of enzymes. 
+summary: Massive sequencing projects expose the extent of natural, genetic diversity. Here, we describe a method with capacity to perform ancestor sequence reconstruction from data sets in excess of 10,000 sequences, poised to recover ancestral diversity, including the evolutionary events that determine present-time biological function and structure.
+
+  We introduce a novel strategy for suggesting “insertion-deletion variants” that are distinct from, but can be explored alongside, substitution variants for creating ancestral libraries. We demonstrate how insertions and deletions can be used as building blocks to form “hybrid ancestors”; based on this strategy, we synthesise ancestor variants, with varying enzymatic activities, for wide-ranging applications in the biotechnology sector. 
 
 tags:
 - Inference
@@ -51,7 +55,7 @@ featured: true
 
 links:
 - name: DOI
-  url: http://doi.org/10.1101/2019.12.30.891457
+  url: https://doi.org/10.1371/journal.pcbi.1010633
 # url_pdf: http://arxiv.org/pdf/1512.04133v1
 # url_code: '#'
 # url_dataset: '#'

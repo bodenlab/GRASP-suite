@@ -30,20 +30,20 @@
     </item>
     
     <item>
-      <title>Publications</title>
-      <link>http://bodenlab.github.io/GRASP-suite/publication/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://bodenlab.github.io/GRASP-suite/publication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>http://bodenlab.github.io/GRASP-suite/talk/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>http://bodenlab.github.io/GRASP-suite/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/</guid>
       <description></description>
     </item>
     
