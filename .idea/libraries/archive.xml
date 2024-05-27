@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="archive">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/docs/content/project/graspcmd/archive/bnkit_legacy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/docs/content/project/graspcmd/archive/bnkit_20211215.jar!/" />
+      <root url="jar://$PROJECT_DIR$/docs/content/project/graspcmd/archive/bnkit.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
