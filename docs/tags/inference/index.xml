@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Inference on GRASP-suite</title>
-    <link>http://localhost:1313/GRASP-suite/tags/inference/</link>
+    <link>http://bodenlab.github.io/GRASP-suite/tags/inference/</link>
     <description>Recent content in Inference on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="http://localhost:1313/GRASP-suite/tags/inference/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="http://bodenlab.github.io/GRASP-suite/tags/inference/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>asr.GRASP</title>
-      <link>http://localhost:1313/GRASP-suite/project/graspcmd/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/project/graspcmd/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/project/graspcmd/</guid>
       <description>&lt;h2 id=&#34;grasp-command-line-interface-cli&#34;&gt;GRASP command-line interface (CLI)&lt;/h2&gt;
 &lt;p&gt;There is a command-line interface of GRASP that can prove useful if you want to automate tasks, run reconstructions on your own dedicated hardware, and/or access the latest features. This version is essentially a command-line interface to the backend features of the web-based service. It is worth noting that the web-based version has the advantage of a visual user interface, but that also means that it may lack the latest functionality.&lt;/p&gt;
 &lt;p&gt;The command-line version allows access to a variety of indel inference approaches. Beyond the default bi-directional edge encoding (BE), indels are available by either Position Specific (PS), or Simple Indel Coding (SIC). Regardless of encoding, indels can be inferred using either Parsimony (P) or Maximum Likelihood (ML) methods. This gives six methods: PS-P, PS-ML, SIC-P, SIC-ML, BE-P, BE-ML.&lt;/p&gt;
@@ -29,9 +29,9 @@
 &lt;h3 id=&#34;asrgrasp-how-do-i-make-it-work-on-my-computer&#34;&gt;asr.GRASP: How do I make it work on my computer?&lt;/h3&gt;
 &lt;p&gt;First, you will need Java version 8 or newer. Any operating system with Java should work, including Mac OS, MS Windows and Linux.&lt;/p&gt;
 &lt;p&gt;Then, you have a choice: you can clone/download &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; in its entirety. You may need JUnit 5 testing to get everything working; this is only required if you want to run software tests, say if you are a developer.&lt;/p&gt;
-&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;http://localhost:1313/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_19.jar&#34;&gt;bnkit JAR file&lt;/a&gt;. This is the 21st of March 2024 version and compiled with a recent version of Java (19).&lt;/p&gt;
-&lt;p&gt;We also offer a version compiled using &lt;a href=&#34;http://localhost:1313/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_11.jar&#34;&gt;Java 11&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Or, the legacy version &lt;a href=&#34;http://localhost:1313/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
+&lt;p&gt;Alternatively, just download the pre-compiled version with all indel inference methods &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_19.jar&#34;&gt;bnkit JAR file&lt;/a&gt;. This is the 21st of March 2024 version and compiled with a recent version of Java (19).&lt;/p&gt;
+&lt;p&gt;We also offer a version compiled using &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_java_11.jar&#34;&gt;Java 11&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Or, the legacy version &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/project/graspcmd/archive/bnkit_legacy.jar&#34;&gt;bnkit JAR file&lt;/a&gt;, which we keep to ensure reproducibility of results presented in the original papers.&lt;/p&gt;
 &lt;h3 id=&#34;asrgrasp-how-do-i-run-it&#34;&gt;asr.GRASP: How do I run it?&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -173,19 +173,19 @@
     
     <item>
       <title>Engineering indel and substitution variants of diverse and ancient enzymes using Graphical Representation of Ancestral Sequence Predictions (GRASP)</title>
-      <link>http://localhost:1313/GRASP-suite/publication/grasp/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/grasp/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/publication/grasp/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/grasp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GRASP</title>
-      <link>http://localhost:1313/GRASP-suite/project/grasp/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/project/grasp/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/project/grasp/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/project/grasp/</guid>
       <description>&lt;h2 id=&#34;grasp-web-service&#34;&gt;GRASP web service&lt;/h2&gt;
 &lt;p&gt;GRASP web service was developed to facilitate the steps of performing a reconstruction of ancestor sequences (represented by partial-order graphs) and the exploration, archival and sharing of the output. The service consists of three major parts: an inference engine &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt; written in Java, a web service backend written in Java using the Spring framework and Postgres, and web client functionality written in Javascript. The latter two are contained in the open source project &lt;a href=&#34;https://github.com/bodenlab/GRASP&#34;&gt;GRASP&lt;/a&gt;. GRASP depends on the open source project &lt;a href=&#34;https://github.com/bodenlab/bnkit&#34;&gt;bnkit&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;grasp-what-can-it-do&#34;&gt;GRASP: What can it do?&lt;/h3&gt;
@@ -195,7 +195,7 @@
 &lt;h3 id=&#34;graspcmd-how-do-i-run-it&#34;&gt;GraspCmd: How do I run it?&lt;/h3&gt;
 &lt;p&gt;Follow the User&amp;rsquo;s Guide.&lt;/p&gt;
 &lt;h3 id=&#34;what-else&#34;&gt;What else?&lt;/h3&gt;
-&lt;p&gt;There is a &lt;a href=&#34;http://localhost:1313/GRASP-suite/GRASP-suite/&#34;&gt;command-line version&lt;/a&gt; to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&#34;http://bodenlab.github.io/GRASP-suite/GRASP-suite/&#34;&gt;command-line version&lt;/a&gt; to run reconstructions on your local hardware. This version does &lt;em&gt;not&lt;/em&gt; have all the features; for instance there is no interactive mode and currently no way of transferring your reconstruction to the web service.&lt;/p&gt;
 </description>
     </item>
     

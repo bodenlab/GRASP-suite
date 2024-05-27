@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations on GRASP-suite</title>
-    <link>http://localhost:1313/GRASP-suite/presentations/</link>
+    <link>http://bodenlab.github.io/GRASP-suite/presentations/</link>
     <description>Recent content in Presentations on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     
-	    <atom:link href="http://localhost:1313/GRASP-suite/presentations/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="http://bodenlab.github.io/GRASP-suite/presentations/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://localhost:1313/GRASP-suite/presentations/readme/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/presentations/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/presentations/readme/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/presentations/readme/</guid>
       <description>&lt;p&gt;Presentations&lt;/p&gt;
 </description>
     </item>

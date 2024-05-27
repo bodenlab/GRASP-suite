@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ancestral Sequence Reconstruction on GRASP-suite</title>
-    <link>http://localhost:1313/GRASP-suite/tags/ancestral-sequence-reconstruction/</link>
+    <link>http://bodenlab.github.io/GRASP-suite/tags/ancestral-sequence-reconstruction/</link>
     <description>Recent content in Ancestral Sequence Reconstruction on GRASP-suite</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="http://localhost:1313/GRASP-suite/tags/ancestral-sequence-reconstruction/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="http://bodenlab.github.io/GRASP-suite/tags/ancestral-sequence-reconstruction/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Workflow ASR</title>
-      <link>http://localhost:1313/GRASP-suite/post/protocols/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/post/protocols/</link>
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/post/protocols/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/post/protocols/</guid>
       <description>&lt;h3 id=&#34;install-key-programs&#34;&gt;Install key programs&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -155,19 +155,19 @@
     
     <item>
       <title>Engineering highly functional thermostable proteins using ancestral sequence reconstruction</title>
-      <link>http://localhost:1313/GRASP-suite/publication/engineering_highly_functional/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/publication/engineering_highly_functional/</link>
       <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/publication/engineering_highly_functional/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/publication/engineering_highly_functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fractional distance analysis</title>
-      <link>http://localhost:1313/GRASP-suite/post/analysis/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/post/analysis/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/post/analysis/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/post/analysis/</guid>
       <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;Click here to access this notebook through GRASP-resources&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This notebook can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
@@ -176,10 +176,10 @@
     
     <item>
       <title>General GRASP tutorial</title>
-      <link>http://localhost:1313/GRASP-suite/post/grasp/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/post/grasp/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/post/grasp/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/post/grasp/</guid>
       <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/tutorial&#34;&gt;Click here to access the general GRASP tutorial&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -187,10 +187,10 @@
     
     <item>
       <title>GRASP user guide</title>
-      <link>http://localhost:1313/GRASP-suite/post/userguide/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/post/userguide/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/post/userguide/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/post/userguide/</guid>
       <description>&lt;h2 id=&#34;grasp-user-guide&#34;&gt;GRASP user guide&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://grasp.scmb.uq.edu.au/guide&#34;&gt;Click here to access the GRASP user guide&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -198,10 +198,10 @@
     
     <item>
       <title>Sequence curation tutorials</title>
-      <link>http://localhost:1313/GRASP-suite/post/curation/</link>
+      <link>http://bodenlab.github.io/GRASP-suite/post/curation/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/GRASP-suite/post/curation/</guid>
+      <guid>http://bodenlab.github.io/GRASP-suite/post/curation/</guid>
       <description>&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;Click here to access these notebooks through GRASP-resources&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;These notebooks can be cloned and used locally. See the &lt;a href=&#34;http://github.com/bodenlab/GRASP-resources&#34;&gt;GRASP-resources repository&lt;/a&gt; for full details&lt;/p&gt;
